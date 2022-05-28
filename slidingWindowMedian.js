@@ -41,6 +41,7 @@ class Queue {
         }
     }
 
+    //fix the sorting method...results in infinite loop
     sort(){
         let runner = this.front;
         
