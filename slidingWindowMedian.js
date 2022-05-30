@@ -43,6 +43,7 @@ class Queue {
 
     //fix the sorting method...results in infinite loop
     //this doesn't sort correctly
+    //selection sort, insertion sort, bubble sort
     sort(){
         let runner = this.front;
         
