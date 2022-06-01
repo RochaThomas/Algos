@@ -48,11 +48,11 @@ class Queue {
     sort(){
         let runner = this.front;
         
-        while (runner){
+        while (runner.next){
             let back = runner.next;
             let val = runner.next;
             while (val){
-                if (val.data > val.prev.data || val.prev === null){
+                if (val.prev === null || back.data > val.prev.data){
                     const temp = back.position;
                     back.position = val.position;
                     val.position = temp;
@@ -62,28 +62,36 @@ class Queue {
                     val = val.prev;
                 }
             }
+            console.log();
+            this.printQueue();
+            console.log();
             runner = runner.next;
         }
-
-        let print = this.front;
-        while (print){
-            console.log("data:", print.data, " ---- position:", print.position);
-        }
+        
+        console.log();
+        this.printQueue();
     }
 
     // helper function
     printQueue() {
-        var runner = this.front;
-        if (this.front) {
-            console.log("FRONT: " + this.front.data)
-        }
+        // var runner = this.front;
+        // if (this.front) {
+        //     console.log("FRONT: " + this.front.data)
+        // }
 
-        while (runner) {
-            console.log(runner.data)
-            runner = runner.next
-        }
-        if (this.rear) {
-            console.log("REAR: " + this.rear.data)
+        // while (runner) {
+        //     console.log(runner.data)
+        //     runner = runner.next
+        // }
+        // if (this.rear) {
+        //     console.log("REAR: " + this.rear.data)
+        // }
+
+        let runner = this.front;
+
+        while (runner){
+            console.log("data:", runner.data, " ---- position:", runner.position);
+            runner = runner.next;
         }
 
     }
