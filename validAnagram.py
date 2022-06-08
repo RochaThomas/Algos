@@ -29,7 +29,6 @@
 #     return True
 
 # more optimal solution
-from getopt import gnu_getopt
 
 
 def isAnagram(word, test_word):
