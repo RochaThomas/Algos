@@ -14,6 +14,7 @@
 
 # the above notes should be re ordered
 
+# fairly optimal solution first try!
 def isValidSudoku(board):
 
     # first i'm checking the 3 by 3
