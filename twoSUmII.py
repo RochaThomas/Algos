@@ -19,7 +19,16 @@
 
 # second optimized try
 def twoSum(numbers, target):
-    pass
+    front = 0
+    back = len(numbers) - 1
+
+    while True:
+        if numbers[front] + numbers[back] > target:
+            back -= 1
+        elif  numbers[front] + numbers[back] < target:
+            front += 1
+        else:
+            return [front + 1, back + 1]
 
 print(twoSum([2,7,11,15], 9))
     
