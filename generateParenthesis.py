@@ -1,7 +1,31 @@
 # morning algos
 # neetcode generate parenthesis
 
+
+# neetcode solution 
+# recursive
+# it works but its not clear how it works... need to review this problem later with fresh eyes
+
 def generateParenthesis(n):
-    pass
+    stack = []
+    res = []
+
+    def backtrack(openN, closedN):
+        if openN == closedN == n:
+            res.append("".join(stack))
+            return 
+
+        if openN < n:
+            stack.append("(")
+            backtrack(openN + 1, closedN)
+            stack.pop()
+
+        if closedN < openN:
+            stack.append(")")
+            backtrack(openN, closedN + 1)
+            stack.pop()
+    
+    backtrack(0,0)
+    return res
 
 print(generateParenthesis(3))
