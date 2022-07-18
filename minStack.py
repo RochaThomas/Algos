@@ -1,35 +1,44 @@
 # morning algos
 # neetcode min stack
 
+# neetcode solution
+# basically uses 2 arrays and built in functions
+
 class MinStack(object):
 
     def __init__(self):
-        pass
+        self.stack = []
+        self.minStack = []
 
     def push(self, val):
         """
         :type val: int
         :rtype: None
         """
-        
+        self.stack.append(val)
+        if self.minStack:
+            val = min(val, self.minStack[-1])
+
+        self.minStack.append(val)
 
     def pop(self):
         """
         :rtype: None
         """
-        
+        self.stack.pop()
+        self.minStack.pop()
 
     def top(self):
         """
         :rtype: int
         """
-        
+        return self.stack[-1]
 
     def getMin(self):
         """
         :rtype: int
         """
-        
+        return self.minStack[-1]
 
 
 # Your MinStack object will be instantiated and called as such:
