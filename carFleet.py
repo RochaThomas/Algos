@@ -25,6 +25,7 @@ def carFleet(target, position, speed):
     for p, s in sorted(pair)[::-1]:
         # calculating and appending the time it takes a car to reach destination
 
+        # in leetcode stack.append(float((target - p)) / s)
         stack.append((target - p) / s)
 
         # if len(stack) >= 2 is checking that there are at least 2 elements in the stack
@@ -37,4 +38,4 @@ def carFleet(target, position, speed):
 
     return len(stack)
 
-print(carFleet(12, [10,8,0,5,3], [2,4,1,1,3]))
+print(carFleet(10, [6,8], [3,2]))
