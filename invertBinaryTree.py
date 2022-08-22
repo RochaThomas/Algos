@@ -8,6 +8,16 @@ class TreeNode:
         self.right = right
 class Solution:
     def invertTree(self, root):
-        pass
+        if not root:
+            return None
+            
+        temp = root.left
+        root.left = root.right
+        root.right = temp
+
+        self.invertTree(root.right)
+        self.invertTree(root.left)
+
+        return root
 
     print(invertTree([4,2,7,1,3,6,9]))
