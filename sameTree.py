@@ -14,6 +14,6 @@ class Solution:
         if not p or not q or p.val != q.val:
             return False
 
-        return (self.isSameTree(p.left, p.right) and self.isSameTree(q.left, q.right))
+        return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
         
     print(isSameTree([1,2,3], [1,2,3]))
