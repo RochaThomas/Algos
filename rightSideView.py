@@ -9,8 +9,34 @@
 #         self.right = right
 
 
+import collections
+
+
 class Solution:
     def rightSideView(self, root):
-        pass
+        output = []
+
+        if not root:
+            return output
+
+        q = collections.deque()
+        q.append(root)
+        
+        while q:
+            qLen = len(q)
+            level = []
+            for i in range(qLen):
+                node = q.popleft()
+
+                if node:
+                    level.append(node.val)
+                    q.append(node.left)
+                    q.append(node.right)
+
+            if level:
+                output.append(level[-1])
+        
+        return output
+
 
     print(rightSideView([1,2,3,None,5,None,4]))
