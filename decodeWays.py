@@ -18,6 +18,7 @@ class Solution:
                 dp[i] += dp[i + 2]
         return dp[0]
     
+        # second solution
         # dp = { len(s) : 1}
         # def dfs(i):
         #     if i in dp:
