@@ -1,8 +1,32 @@
 # morning algos
 # neetcode Hand of Straights
 
+import heapq
+
 class Solution:
     def isNStraightHand(self, hand, groupSize):
-        pass
+        if len(hand) % groupSize:
+            return False
+
+        count = {}
+        for n in hand:
+            count[n] = 1 + count.get(n, 0)
+        
+        minH = list(count.keys())
+        heapq.heapify(minH)
+        while minH:
+            first = minH[0]
+
+            for i in range(first, first + groupSize):
+                if i not in count:
+                    return False
+                count[i] -= 1
+                if count[i] == 0:
+                    if i != minH[0]:
+                        return False
+                    heapq.heappop(minH)
+        return True
+
+
 
     print(isNStraightHand([1,2,3,6,2,3,4,7,8], 3))
