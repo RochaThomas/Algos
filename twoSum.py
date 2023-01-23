@@ -9,6 +9,16 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        pass
+
+        # time: O(n)
+        # space: O(n)
+        differences = {}
+
+        for i in range(len(nums)):
+            if nums[i] in differences:
+                return [differences[nums[i]], i]
+            else:
+                differences[target - nums[i]] = i
+        return False
 
     print(twoSum([2,7,11,15], 9))
