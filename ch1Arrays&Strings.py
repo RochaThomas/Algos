@@ -107,7 +107,21 @@ def oneAway(str1, str2):
 # implement a method to perform basic string compression for repeated characters, if the compressed string wouldn't be smaller than
 # the original string, return the original
 def stringCompression(str):
-    pass
+
+    res = str[0]
+    prev = str[0]
+    count = 0
+
+    for i in range(len(str)):
+        if str[i] != prev:
+            res += prev + count
+            count = 0
+        else: 
+            count += 1
+
+        prev = str[i]
+    
+    return res if len(res) < len(str) else str
 
 
 print(oneAway("abc", "abd")) 
