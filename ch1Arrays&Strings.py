@@ -33,7 +33,39 @@ def isUnique(str):
 # 1.2 check permutations
 # write a method to check if one string is a permutation of another
 def isPermutation(str1, str2):
-    pass
+    if len(str1) != len(str2): return False
+
+    total1, total2 = 0, 0
+    for i in range(len(str1)):
+        total1 += ord(str1[i])
+        total2 += ord(str2[i])
+
+    if total1 != total2:
+        return False
+    return True
+
+    # another solution is to sort the strings and compare
+
+# 1.3 URLify
+# replace spaces in the string with %20
+def URLify(str):
+    # cheating return str.replace(" ", "%20")
+    # res = ""
+    # for i in range(len(str)):
+    #     if str[i] == " ":
+    #         res += "%20"
+    #     else:
+    #         res += str[i]
+    # return res
+
+    # inplace solution
+    numOfSpace = str.count(" ")
+    lenOfLoop = numOfSpace * 2 + len(str)
+    for i in range(lenOfLoop):
+        if str[i] == " ":
+            str = str[:i] + "%20" + str[i + 1:]
+            i += 2
+    return str
 
 
-print(isPermutation("abc", "bca")) 
+print(URLify("t a rocha 99")) 
