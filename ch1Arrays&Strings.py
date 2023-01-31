@@ -87,8 +87,27 @@ def palindromePermutations(str):
     return True if numOdds <= 1 else False
 
 # 1.5 One Away
-# given two strings, write a function that checks if they are one edit (replace, delete, insert) away from each other
+# given two strings, write a function that checks if they are one edit (replace, delete, insert) away from each other at most
 def oneAway(str1, str2):
+    if abs(len(str1) - len(str2)) > 1:
+        return False
+
+    longStr = str1 + str2
+    letters = set()
+
+    for i in range(len(longStr)):
+        if longStr[i] in letters:
+            letters.remove(longStr[i])
+        else:
+            letters.add(longStr[i])
+    
+    return True if len(letters) <= 2 else False
+
+# 1.6 String Compression
+# implement a method to perform basic string compression for repeated characters, if the compressed string wouldn't be smaller than
+# the original string, return the original
+def stringCompression(str):
     pass
+
 
 print(oneAway("abc", "abd")) 
