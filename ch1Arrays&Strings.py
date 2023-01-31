@@ -72,26 +72,19 @@ def URLify(str):
 
 def palindromePermutations(str):
     letters = {}
-    numChars = 0
+    numOdds = 0
     str = str.lower()
     for c in str:
         if c == " ":
             continue
         else:
             letters[c] = 1 + letters.get(c, 0)
-            numChars += 1
+            if letters[c] % 2 == 0:
+                numOdds -= 1
+            else:
+                numOdds += 1
     
-    numOdds = 0
-    for key, value in letters.items():
-        if value % 2 != 0:
-            numOdds += 1
-        if numOdds > 1:
-            return False
-        
-    if ((numOdds == 0 and numChars % 2 == 0) or
-        (numOdds == 1 and numChars % 2 == 1)):
-        return True
-    return False
+    return True if numOdds <= 1 else False
 
 # 1.5 One Away
 # given two strings, write a function that checks if they are one edit (replace, delete, insert) away from each other
