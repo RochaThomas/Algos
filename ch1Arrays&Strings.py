@@ -67,5 +67,35 @@ def URLify(str):
             i += 2
     return str
 
+# 1.4 palindrome permutations
+# write a function to check if a string has a palidromic permutation
 
-print(URLify("t a rocha 99")) 
+def palindromePermutations(str):
+    letters = {}
+    numChars = 0
+    str = str.lower()
+    for c in str:
+        if c == " ":
+            continue
+        else:
+            letters[c] = 1 + letters.get(c, 0)
+            numChars += 1
+    
+    numOdds = 0
+    for key, value in letters.items():
+        if value % 2 != 0:
+            numOdds += 1
+        if numOdds > 1:
+            return False
+        
+    if ((numOdds == 0 and numChars % 2 == 0) or
+        (numOdds == 1 and numChars % 2 == 1)):
+        return True
+    return False
+
+# 1.5 One Away
+# given two strings, write a function that checks if they are one edit (replace, delete, insert) away from each other
+def oneAway(str1, str2):
+    pass
+
+print(oneAway("abc", "abd")) 
