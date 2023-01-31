@@ -178,8 +178,15 @@ def zeroMatrix(matrix):
             matrix[r][0] = 0
     return matrix
 
-print(zeroMatrix(
-    [[1,1,1]
-    ,[1,0,1]
-    ,[1,1,1]]
-))
+# 1.9 String Rotation
+# assuming you have a method that checks if one string is a substring of another called isSubstring, write a method
+# that checks if one string is a rotation of another string using only 1 call to isSubstring
+def stringRotation(str1, str2):
+    if len(str1) - len(str2) != 0:
+        return False
+
+    str1str1 = str1 + str1
+    return str2 in str1str1
+    
+
+print(stringRotation("cathat", "hatcat"))
