@@ -107,7 +107,9 @@ def oneAway(str1, str2):
 # implement a method to perform basic string compression for repeated characters, if the compressed string wouldn't be smaller than
 # the original string, return the original
 def stringCompression(str):
-
+# the solutions to this are silly, another way to do it is to count to see if the compressed string would be smaller first
+# then make the compressed string after if necessary
+# this makes for a horrible time complexity
     res = str[0]
     prev = str[0]
     count = 0
@@ -123,5 +125,32 @@ def stringCompression(str):
     
     return res if len(res) < len(str) else str
 
+# 1.7 Rotate Matrix
+# PRACTICE THIS ONE AGAIN, HARD TO VISUALIZE
+# given an n x n matrix where each pixel of the image is represented by a number can you rotate the image 90 degrees
+# follow up: can you do it in place
+def rotate(array):
+    l, r = 0, len(array) - 1
 
-print(oneAway("abc", "abd")) 
+    while l < r:
+        for i in range(r - l):
+            top, bottom = l, r
+            topLeft = array[top][l + i]
+
+            array[top][l + i] = array[bottom - i][l]
+
+            array[bottom - i][l] = array[bottom][r - i]
+
+            array[bottom][r - i] = array[top + i][r]
+
+            array[top + i][r] = topLeft
+
+        r -= 1
+        l += 1
+
+    return array
+
+print(rotate([  [1,2,3],
+                [4,5,6],
+                [7,8,9]
+            ]))
