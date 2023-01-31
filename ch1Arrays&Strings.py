@@ -150,7 +150,36 @@ def rotate(array):
 
     return array
 
-print(rotate([  [1,2,3],
-                [4,5,6],
-                [7,8,9]
-            ]))
+# 1.8 Zero Matrix
+# when an element in a matrix is 0, set the entire row and column to 0
+# tricky to understand the zeroFirstRow and the last two if statements. Go over them again
+def zeroMatrix(matrix):
+    ROWS, COLS = len(matrix), len(matrix[0])
+    zeroFirstRow = False
+
+    for r in range(ROWS):
+        for c in range(COLS):
+            if matrix[r][c] == 0:
+                matrix[0][c] = 0
+                if r > 0:
+                    matrix[r][0] = 0
+                else:
+                    zeroFirstRow = True
+    for r in range(ROWS):
+        for c in range(COLS):
+            if matrix[0][c] == 0:
+                matrix[r][c] = 0
+
+    if matrix[0][0] == 0:
+        for c in COLS:
+            matrix[0][c] = 0
+    if zeroFirstRow:
+        for r in ROWS:
+            matrix[r][0] = 0
+    return matrix
+
+print(zeroMatrix(
+    [[1,1,1]
+    ,[1,0,1]
+    ,[1,1,1]]
+))
