@@ -117,4 +117,33 @@ class LinkedList(object):
 # greater than the partition follow. The partition value does not have to separate the two halves
 
     def partition(self, x):
-        pass
+        # iterate through linkedlist
+        # add smaller vals to one list and larger to another list
+        # then link the two at the end
+
+        curr = self.head
+        new_head = Node()
+        start = new_head.next
+        partition_point = Node()
+        back_half = partition_point.next
+
+        while curr != None:
+            if curr.data < x:
+                start.next = curr
+                start = start.next
+            else:
+                back_half.next = curr
+                back_half = back_half.next
+            curr = curr.next
+        
+        start.next = partition_point.next
+        
+        return new_head.next
+
+# 2.5 Sum Lists
+# given two linkedlist where each node represents a digit of a number, find the sum. The linked lists are stored in
+# reverse order
+# follow up: repeat this question if the link lists were reversed
+
+        def sum_lists(self, list1, list2):
+            pass
