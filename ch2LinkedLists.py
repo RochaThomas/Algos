@@ -144,6 +144,47 @@ class LinkedList(object):
 # given two linkedlist where each node represents a digit of a number, find the sum. The linked lists are stored in
 # reverse order
 # follow up: repeat this question if the link lists were reversed
+# find video for follow up question
 
-        def sum_lists(self, list1, list2):
-            pass
+    def sum_lists(self, list1, list2):
+        l1 = list1.head
+        l2 = list2.head
+
+        res_head = Node()
+        res = res_head.next()
+
+        while l1 != None and l2 != None:
+            new_digit = Node(data = l1.data + l2.data + carry)
+            res.next = new_digit
+            res = res.next
+
+            carry = new_digit.data // 10
+            
+            l1 = l1.next
+            l2 = l2.next
+
+        if carry > 0:
+            res.next = Node(data = carry)
+
+        # if one is longer than the other
+        if l1 != None:
+            while l1 != None:
+                l1.data = l1.data + carry
+                carry = l1.data // 10
+                res.next = l1
+                res = res.next
+                l1 = l1.next
+        elif l2 != None:
+            while l2 != None:
+                l2.data = l2.data + carry
+                carry = l2.data // 10
+                res.next = l2
+                res = res.next
+                l2 = l2.next
+        
+        return res_head.next
+
+# 2.6 Palindrome
+# implement a function to check if the linked list a palindrome
+
+
