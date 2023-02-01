@@ -186,5 +186,30 @@ class LinkedList(object):
 
 # 2.6 Palindrome
 # implement a function to check if the linked list a palindrome
+# watch video on recursive solution
+    def palindrome(self):
+        curr = self.head
+        runner = curr
+        stack = []
+
+        while runner != None and runner.next != None:
+            stack.append(curr.data)
+            runner = runner.next.next
+            curr = curr.next
+
+        # accounting for an odd number of nodes
+        if runner != None:
+            curr = curr.next
+
+        while curr != None:
+            top = stack.pop()
+            if curr.data != top:
+                return False
+            curr = curr.next
+
+        return True
+
+# 2.7 Intersection
+# given two singlely linked lists determine if the two lists intersect by reference
 
 
