@@ -99,5 +99,22 @@ class LinkedList(object):
         while runner.next != None:
             runner = runner.next
             curr = curr.next
-            
+
         return curr.data
+
+# 2.3 Delete Middle Node
+# delete a node from a linked list (not the head or end) without having access to the head, you only have access to
+# the specific node
+    def delete_middle_node(self, node):
+        if node.next == None or node == None:
+            return False
+        node.data = node.next.data
+        node.next = node.next.next
+        return True
+
+# 2.4 Partition
+# write code that partitions a linked list by a certain value. All nodes less than the partition value are first then all values
+# greater than the partition follow. The partition value does not have to separate the two halves
+
+    def partition(self, x):
+        pass
