@@ -212,4 +212,56 @@ class LinkedList(object):
 # 2.7 Intersection
 # given two singlely linked lists determine if the two lists intersect by reference
 
+    def intersection(self, list1, list2):
+        l1, l1_len, l1_none = list1.head, 0, False
+        l2, l2_len, l2_none = list2.head, 0, False
+
+        # first get lengths and see which is longer
+        while l1 != None and l2 != None:
+            l1_len += 1
+            l2_len += 1
+            
+            l1 = l1.next
+            l2 = l2.next
+            if l1 == None:
+                l1_none = True
+            if l2 == None:
+                l2_none = True
+        
+        # get tails
+        if l1_none:
+            while l1:
+                l1_len += 1
+                l1 = l1.next
+        if l2_none:
+            while l2:
+                l2_len += 1
+                l2 = l2.next
+
+        # if tails aren't equal then return False
+        if l1 != l2:
+            return False
+
+        # reset runners
+        l1 = list1.head
+        l2 = list2.head
+        
+        # make list the same length
+        if l1_len > l2_len:
+            for i in range(l1_len - l2_len):
+                l1 = l1.next
+        elif l2_len > l1_len:
+            for i in range(l2_len - l1_len):
+                l2 = l2.next
+
+        # compare nodes by reference and return intersection
+        while l1 != None and l2 != None:
+            if l1 == l2:
+                return l1
+
+        return False
+
+# 2.8 Loop Detection
+# determine if a linked list contains a loop and return the node at the beginning of the loop if one exists
+
 
