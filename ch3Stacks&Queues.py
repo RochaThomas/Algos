@@ -60,4 +60,15 @@ when min is empty pop all from max and push all to min
 """
 
 # 3.6 animal shelter
-# 
+# imagine there is an animal shelter that implements first in first out, you cant choose which dog or cat
+# you can only choose if you want a dog or cat
+# implement a data structure that models this system
+"""
+make a data structure, animal shelter that has an array of queues
+array[0] is a queue for dogs and array[1] is for cats
+dequeueAny peeks at the two queues and pops the oldest of the dogs or cats
+have animal class
+    -> dogs class inherits from animal
+    -> cats class inherits from animal
+this allows all methods to return either a cat or dog
+"""
