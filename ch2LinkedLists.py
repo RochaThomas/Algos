@@ -263,5 +263,23 @@ class LinkedList(object):
 
 # 2.8 Loop Detection
 # determine if a linked list contains a loop and return the node at the beginning of the loop if one exists
+# watch a video on this solution, hard to visualize
+    def loop_detection(self):
+        curr = self.head
+        runner = self.head
 
+        while curr != None and runner != None:
+            curr = curr.next
+            runner = runner.next.next
+            if curr == runner:
+                break
+
+        # no collision no loop
+        if runner == None or runner.next == None:
+            return False
+
+        curr = self.head
+        while curr != runner:
+            curr = curr.next
+            runner = runner.next
 
