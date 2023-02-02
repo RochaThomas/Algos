@@ -27,4 +27,30 @@ so when the min is popped off the min of the top of the stack is the min of the 
 when a node is added to the stack compare val of node to min and record local min for that node
 """
 
+# 3.3 stack of plates
+# implement a data structure the holds a set of stacks, when a stack gets too tall, start a new one
+# follow up: implement a method popAt() that props from a stack at a certain index
+#   trick is do you shift to the popped stack so its full or do you operate with a stack at lower cap
+"""
+data stucture is an array of arrays. outer array holds multiple inner arrays
+inner[0] holds a stack and inner[1] is the length of inner[0]
+when inner[1] hits a specfic length start a new array with new stack with new length and append to stack_of_plates
+"""
 
+# 3.4 queue via stacks
+# implement a my_queue class that implements a queue using two stacks
+"""
+pop all from one stack to the other then pop from the second stack to the queue
+
+another solution is to use the second stack as the oldest and the first stack as newest
+when oldest is empty, pop all from newest to oldest
+when pushing just push to oldest
+"""
+
+# 3.5 sort stack
+# sort a stack such that the stack is in order where the smallest is on top but the only other data structure
+# you can use is another stack
+
+
+# 3.6 animal shelter
+# 
