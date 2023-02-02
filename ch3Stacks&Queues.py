@@ -50,7 +50,14 @@ when pushing just push to oldest
 # 3.5 sort stack
 # sort a stack such that the stack is in order where the smallest is on top but the only other data structure
 # you can use is another stack
-
+"""
+have a temp stack where bottom is the smallest val
+temp = curr.pop()
+if last.data > temp.data
+then pop from max_stack to min_stack
+push from temp to max
+when min is empty pop all from max and push all to min
+"""
 
 # 3.6 animal shelter
 # 
