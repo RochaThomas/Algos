@@ -205,4 +205,24 @@ class Tree:
 # implement a function to check if a binary tree is a binary search tree
 
     def validate_bst(self):
+        def valid_bst_node(root, min, max):
+            # if None return true
+            if root == None:
+                return True
+            
+            # if min is not None this means the node is on the right, right nodes must be larger than the min
+            # if max is not None this means the node is on the left, left nodes must be less than the max
+            # return false otherwise
+            if (min != None and root.data <= min) or (max != None and root.data > max):
+                return False
+
+            # run valid bst node on both right and left of node
+            if (not valid_bst_node(root.right, root.data, max) or not valid_bst_node(root.left, min, root.data)):
+                return False
+
+        return valid_bst_node(self.root, None, None)
+
+# 4.6 successor
+# write an algo to find the next node of a given node in a bst, assume each node has a link to its parent node
+    def successor(self, n):
         pass
