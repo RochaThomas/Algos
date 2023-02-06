@@ -2,6 +2,9 @@
 # chapter 4 trees and graphs
 
 # interview questions
+import collections
+
+
 class bst_node():
     def __init__(self, data):
         self.data = data
@@ -94,4 +97,33 @@ class Tree:
         self.root.inorder()
 
 # 4.1 route between nodes
-# 
+# given a directed graph and 2 nodes S and E, write an algorithm that will find out if there is a path between the two nodes
+
+    def findRoute(self, s, e):
+        if s == e: return True
+        
+        # instantiate q and add the starting node s
+        q = collections.deque()
+        q.append(s)
+
+        # indicate the state of the starting node (its in the q so it is visiting)
+        s.state = visiting
+
+        # while loop to run until the path is found or all nodes are checked (resulting in empty q)
+        while q:
+            # get the node at the front of the q
+            c = q.popleft()
+            if c != None:
+                # loop through the neighbors of current node c (the nodes at the same level as c)
+                for n in c.adjacent:
+                    if n.state == unvisited:
+                        if n == e:
+                            return True
+                        else:
+                            # add node n to q so its neighbors will be checked
+                            n.state = visiting
+                            q.add(n)
+                # once all of c's neighbors have been checked it has been visited (popped from q and all adjacent checked)
+                c.state = visited
+
+        return False
