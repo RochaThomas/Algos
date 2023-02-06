@@ -276,4 +276,33 @@ class Tree:
 # make an algo that finds the first common ancestor of two nodes in a binary tree
 
     def first_common_ancestor(self, n1, n2):
+        """
+        solution if the nodes have links to their parents
+            one way is to traverse up the tree from the two nodes and see where they meet
+                this is implemented like the algo find_intersection of two linked lists
+            another way is to traverse up the tree for on node and at each parent node, check if the parent node has
+            the second node in its tree
+
+        solution if the nodes do not have link to their parents
+            one solution
+                see where the nodes are as you traverse down the tree, 
+                if they are on same branch then shift to that branch and search again
+                if they are on opposite branches then you have found the first common ancestor
+            another solution
+                in the above solution, multiple subtree are searched over and over
+                we can use a recursive function that bubbles up whether or not n1 and n2 exist in a branch
+                return n1 if roots subtree includes n1 but not n2
+                return n2 if roots subtree includes n2 but not n1
+                return null if neither are there
+                else return the lowest common ancestor
+
+                running the recursive function on the left and right will return the lca when the two calls return non null values
+        """
+        pass
+
+# 4.9 bst sequences
+# given a bst, print all possible arrays that could have led to this bst given that the bst was implemented 
+# by traversing through an array from left to right
+
+    def bst_sequences(self):
         pass
