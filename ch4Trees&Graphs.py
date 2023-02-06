@@ -255,4 +255,25 @@ class Tree:
 # is dependent on the first proj in the list), write function that will find a build order that will allow all projs to be built 
 # with all their dependencies being build first. if there is no such order return None
     def build_order(self):
+        """
+        code here is super duper long so here's the general idea...
+        get the list of dependencies and list of projects
+        whatever project has 0 dependencies gets appended to the order
+            then get rid of any outgoing edges from those in the order
+        now any projects that were dependent on those in the order, have no dependencies and you can repreat the process
+        if there aren't anymore projects with 0 dependencies but there are still more projects to be done return False
+
+        you can also use DFS
+        choose a node and run until the children nodes are None. this means you are at the end and nothing depends on these
+        to be built so these can be built last. append to the end of the order
+        the parent of these children must come before the children so add those before the children in the order
+        if you detect a cylce return False
+        """
+        
+        pass
+
+# 4.8 First Common Ancestor
+# make an algo that finds the first common ancestor of two nodes in a binary tree
+
+    def first_common_ancestor(self, n1, n2):
         pass
