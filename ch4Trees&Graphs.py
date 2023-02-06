@@ -127,3 +127,24 @@ class Tree:
                 c.state = visited
 
         return False
+
+# 4.2 minimal tree
+# given a sorted array with unique integer elements, write an algo to create a BST with minimal height
+    def minimal_tree(self, array):
+        """
+        midpoint of the array is inserted as root
+        midpoint from start to midpoint of array is root.left
+        midpoint from midpoint to end of array is root.right
+        """
+        if array.isEmpty(): return None
+
+        root = Node(array[len(array) / 2])
+        root.left = self.minimal_tree(array[0 : (len(array) / 2) - 1])
+        root.left = self.minimal_tree(array[(len(array) / 2) + 1 : len(array)])
+        return root
+            
+
+# 4.3 list of depths
+# given a binary tree, design an algorithm which creates a linked list of every node at each depth
+    def list_of_depths(self):
+        pass
