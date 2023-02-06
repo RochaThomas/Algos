@@ -147,4 +147,29 @@ class Tree:
 # 4.3 list of depths
 # given a binary tree, design an algorithm which creates a linked list of every node at each depth
     def list_of_depths(self):
-        pass
+        res = []
+
+        # create a linkedlist
+        curr = LinkedList(Node())
+        
+        if self.root != None:
+            # add root to LL
+            curr.add(self.root)
+        
+        # run while loop until there are no more children nodes
+        while curr.size() > 0:
+            # add prev level of tree to LL
+            res.append(curr)
+            # save prev level as 'parents' so you can iterate through them to get left and right (the next level)
+            parents = curr
+            # create new LL for the new level
+            curr = LinkedList(Node())
+            # iterate through parents adding left and right as the next level to the new LL
+            for parent in parents:
+                if parent.left != None:
+                    curr.add(parent.left)
+                if parent.right != None:
+                    curr.add(parent.right)
+        
+        return res
+        
