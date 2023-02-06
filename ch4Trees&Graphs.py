@@ -225,4 +225,34 @@ class Tree:
 # 4.6 successor
 # write an algo to find the next node of a given node in a bst, assume each node has a link to its parent node
     def successor(self, n):
+        def leftMostChild(n):
+            if n == None:
+                return None
+            while(n.left != None):
+                n = n.left
+            return n
+
+        if n == None:
+            return None
+        
+        # if there is a right branch, return the left most child of the right branch
+        if n.right != None:
+            return leftMostChild(n.right)
+        else:
+            temp = n
+            parent = temp.parent
+
+            # work you way back up the tree, until you hit the val that comes after n
+            # when the conditions are met to break the while loop you will have hit the right value
+            while parent != None and parent.left != temp:
+                temp = parent
+                parent = parent.parent
+
+            return parent
+
+# 4.7 build order
+# given a list of project with and a list of dependencies (which are lists of pairs of projects where the second project in the list
+# is dependent on the first proj in the list), write function that will find a build order that will allow all projs to be built 
+# with all their dependencies being build first. if there is no such order return None
+    def build_order(self):
         pass
