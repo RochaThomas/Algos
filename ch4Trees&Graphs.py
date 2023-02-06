@@ -173,3 +173,36 @@ class Tree:
         
         return res
         
+
+# 4.4 check balanced
+# implement a function to check if a binary tree is balanced (|node.left.height - node.right.height| <= 1)
+    
+    def check_balanced(self, root):
+        def check_height(root):
+            # if None return -1 (2 None nodes -> -1 - -1 = 0 as height diff)
+            if root == None:
+                return -1
+            
+            # get left height using check height
+            left_height = self.check_height(root.left)
+            if left_height == float("-inf"): return float("-inf")
+
+            # get right height using check height
+            right_height = self.check_height(root.right)
+            if right_height == float("-inf"): return float("-inf")
+
+            # get difference between heights
+            height_diff = abs(left_height - right_height)
+            # if greater than 1 return neg inf -> runs up the stack and into check_balanced function to return False
+            if height_diff > 1:
+                return float("-inf")
+            else:
+                # returning anything other than neg inf to check_balanced results in true
+                return max(left_height, right_height) + 1
+        return check_height(root) != float("-inf")
+
+# 4.5 validate bst
+# implement a function to check if a binary tree is a binary search tree
+
+    def validate_bst(self):
+        pass
