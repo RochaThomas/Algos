@@ -331,4 +331,29 @@ class Tree:
 # 4.10 check subtree
 # t1 and t2 are large binary trees with t1 >>>> t2. create an algo to determine if t2 is a subtree of t1
     def check_subtree(self, t1, t2):
+        """
+        one solution
+            use preorder traversal (not in order, in order traversals will print the same order for many different trees
+            binary search trees with the same values but different structures will always prin the same because the nums will
+            be in order)
+            pre order does root node then left branch then right branch so preorder t2 is guarenteed to be a substring of preorder t1
+                problem arises because we don't know where the null nodes are so we cannot determine if the structures are the same given
+                duplicate values
+                    fix this by adding a non-comparitive value to the preorder when a null node is encountered (if the nodes are nums the
+                    add an X or ! or .)
+            time: O(n * m)
+            space: O(n + m)
+            where n and m are the number of nodes in t1 and t2 respectively
+        another solution
+            go through the entire t1 tree and check if the node data matches the root of t2
+            if it does check if the subtree of t1 matches t2
+            if it doesn't keep going
+            time: O(nm) -> O(n + km)
+            space: O(logn + logm)
+        the more optimal of the two solutions is dependent on the case
+        """
         pass
+
+# 4.11 random node
+# after creating a bst class from scratch you have insert, find, delete, and getRandomNode()
+# getRandomNode() returns a random node in the tree where each node has the same chance of being returned
