@@ -357,3 +357,39 @@ class Tree:
 # 4.11 random node
 # after creating a bst class from scratch you have insert, find, delete, and getRandomNode()
 # getRandomNode() returns a random node in the tree where each node has the same chance of being returned
+
+    def random_node(self):
+        """
+        my idea is to have the tree class keep track of the size of the tree
+        every time insert is called then tree.size += 1
+        every node will also keep track of when it was added (essentially an index)
+        then to get a random node, generate a random number between 1 and size
+        search the tree until the node with that numbers index is found
+        the issue with this method is the search time is O(n) where n is the size of the tree
+            is there a way to index the nodes so the search time is faster but the insert time is not slowed down
+
+        above solution works but can be optimized
+            the indexes are not needed in a bst
+            as long as you keep track of size for every node which is easy to increment and decrement upon insertions and deletions
+                (inserting and deleting requires traversing the tree, as you traverse you would increment or decrement as needed)
+            get random number from 1-N, i, because we know the sizes we can find the node as if it were laid out in order
+            if the random number is less that left.size() you know the node is in the left branch so you get the ith node of that
+            left branch recursively
+            if its equal to left.size() then return the current node
+            if its greater than left.size then the node must be in the right branch so get the ith node of the right branch but
+            modify i so that it skips over the i number of nodes in the left branch (i - (left.size + 1))
+                without this modification you would continuously search the right branches, this modification adjusts so the left branch
+                of the right parent branch is possible
+            
+            this solution is not intuitive upon explanation but is very clear if you run through an example go to ctci pg 271 diagram
+            and think through the solution
+        """
+        pass
+
+# 4.12 paths with sum
+# given a binary tree and a target value, create an algorithm that will return the number of paths that sum to the target value
+# the paths do not have to start at the root or end at a leaf but must go downward and the values of each node can be pos or neg
+
+    def paths_with_sum(self, target):
+        pass
+    
