@@ -391,5 +391,12 @@ class Tree:
 # the paths do not have to start at the root or end at a leaf but must go downward and the values of each node can be pos or neg
 
     def paths_with_sum(self, target):
+        """
+        as we iterate through the tree keep a hashtable of running sums and the number of times it occurs
+        then as we iterate through if target - current sum is in the hashtable we add that to the result
+        additionally if current sum == target result += 1
+        as we finish recursing left and right paths, decrement those runnning sums in the hashtable so we don't count
+        them multiple times
+        time: O(n) because we visit each node only once
+        """
         pass
-    
