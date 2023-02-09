@@ -61,4 +61,45 @@ def binaryToString(d):
 # given an integer and the ability to flip exactly 1 bit from 0 to 1, write an algorithm that will flip 1 bit to return the longest
 # sequence of 1s you can create
 def flipBitToWin(num):
+    """
+    one way is to get the num in 32 bit representation
+    iterate through the bits keeping track of the lengths of sequences of 0s and 1s pushing it to an array
+    the array will have counts of alternating sequences 0s and 1s
+    if the length of the 0 sequence is 1 then the count of the sequences before and after the 0 sequence can be added and compared
+    to the max length
+
+    another way to do it is in place with no extra memory and same O(b) run time
+    keep track of previous length and current length
+    if current bit is 1 current length += 1
+    else (current bit is 0)
+        check is next bit is 1 or 0
+        if 0 then previous length is 0
+        if 1 then previous length is current length
+        reset current length to 0 regardless (once you hit a 0 current length ends)
+    after the end of the if else block
+        compare currentLength + previousLength + 1 to maxLength
+    """
+    if ~num == 0: return 32
+    currentLength, previousLength = 0, 0
+    maxLength = 1
+
+    while num != 0:
+        if num & 1 == 1:
+            currentLength += 1
+        elif num & 1 == 0:
+            previousLength == 0 if num & 2 == 0 else currentLength
+            currentLength = 0
+        maxLength = max(maxLength, previousLength + currentLength + 1)
+        
+        # this last line may mess up the algorithm because python only has arithmetic shifts  >>
+        # java on the other hand has both arithmetic >> and logical >>>
+        # for this algo this next line should be >>> but we don't have that in python
+        #   may need a helper function
+        num >>= 1
+    return maxLength
+
+# 5.4 next number
+# given a positive integer, print the next smallest and next largest numbers that have the same number of 1 bits
+# in their binary representation
+def nextNumber(num):
     pass
