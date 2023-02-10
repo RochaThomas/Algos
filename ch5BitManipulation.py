@@ -175,5 +175,47 @@ def getPrev(num):
 # 5.5 debugger
 # explain what the following code does ((n&(n-1))==0)
 """
-
+call n = a and n - 1 = b, then a & b == 0 means that a and b have no 1 bits in the same place
+if you subtract 1 from a number, in bit representation you find the 1 bit with the smallest significance
+and flip it to a 0 and all the 0s after that are flipped to 1
+so if n & n - 1 == 0
+    then n must have no 1s before the least significant 1 -> mean it only has 1 1 bit
+if a number only has 1 1 bit then the number N IS A POWER OF 2
 """
+
+# 5.6 conversion
+# write a function that will determine the number of bits you need to flip to convert A to B
+def conversion(a, b):
+    """
+    n = a ^ b
+    count the number of 1 bits in n
+    """
+    count = 0
+    n = a ^ b
+
+    # then count the number of 0s
+    # 2 ways to do this
+    # option 1
+    while (n != 0):
+        # increment count if n ends in a 1
+        count += n & 1
+        # right shift (remember python only has arithmetic shift)
+        n >>= 1
+    
+    # option 2
+    # this works because subtracting 1 toggles the right most 1 and its trailing 0s
+    # then when you AND n and n - 1 your result will be n just with the right most 1 flipped to a 0
+    # the rest of n will stay the same
+    # good visual on pg 286
+    while (n != 0):
+        n = n & (n - 1)
+        option2Count += 1
+    return count
+
+# 5.7 pairwise swap
+# write a program to swap odd and even bits in an integer will as few instructions as possible
+# basically swap bit 0 and 1. swap bit 2 and 3. swap bit 4 and 5...etc...
+def pairwiseSwap(n):
+    pass
+
+
