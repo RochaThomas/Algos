@@ -102,4 +102,78 @@ def flipBitToWin(num):
 # given a positive integer, print the next smallest and next largest numbers that have the same number of 1 bits
 # in their binary representation
 def nextNumber(num):
-    pass
+    """
+    brute force is to get num as binary representation, and count 1s
+    then increment or decrement num (count 1s) until you find the next num that matches the number of 1s
+
+    flipping a 1 -> 0 and a 0 -> 1 at the same time keeps the same numbers of 1s
+    if the 1 being flipped to 0 is to the left of the 0 -> 1 then the num decrease
+    the opposite for an increase
+    we want to flip the right most 0 that has 1s on the right of it
+    once we flip that 0 to 1 we have too many 1s
+    after the 0 we flip there will be a number of 1s and 0s
+    clear all the bits after the 0 we flipped
+        but record the count of 1s, c1
+    we need to decrease the c1 by 1
+    we push in c1 - 1 1s to the end of the bit representation
+    """
+    # compute count of 0s and count of 1s after the right most 0 with trailing 1s
+    c = num
+    c0 = 0
+    c1 = 0
+    while (c & 1) == 0 and (c != 0):
+        c0 += 1
+        c >>= 1
+    
+    while (c & 1) == 1:
+        c1 += 1
+        c >>= 1
+    
+    # error when there is no bigger number with the same number of 1s
+    if c0 + c1 == 31 or c0 + c1 == 0:
+        return -1
+
+    # p is the position of the right most non-trailing zero
+    p = c0 + c1
+
+    # flip the right most non-trailing zeros
+    num |= (1 << p)
+    # clear all bits to the right of p
+    num &= ~((1 << p) - 1)
+    # insert c1 - 1 # of 1s on the right
+    num |= (1 << (c1 -1)) - 1
+    return num
+
+def getPrev(num):
+    # get c1 and c0
+    temp = num
+    c0 = 0
+    c1 = 0
+
+    while temp & 1 == 1:
+        c1 += 1
+        temp >>= 1
+    
+    if temp == 0: return 0
+
+    while temp & 1 == 0 and temp != 0:
+        c0 += 1
+        temp >>= 1
+
+    # p is the position of the right most non-trailing 1
+    p = c0 + c1
+
+    # clear bits from p to the end
+    num &= ~0 << (p + 1)
+    # make a mask of c1 + 1 # of 1s
+    mask = 1 << (c1 + 1)
+    # insert c1 + 1 1s and shift c0 - 1 bits left
+    num |= mask << (c0 - 1)
+
+    return num
+
+# 5.5 debugger
+# explain what the following code does ((n&(n-1))==0)
+"""
+
+"""
