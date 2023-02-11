@@ -216,6 +216,25 @@ def conversion(a, b):
 # write a program to swap odd and even bits in an integer will as few instructions as possible
 # basically swap bit 0 and 1. swap bit 2 and 3. swap bit 4 and 5...etc...
 def pairwiseSwap(n):
+    """
+    shift the odd bits
+        create a mask 10101010 in binary (which is 0xAA) then shift them to the right by 1
+        to put them in the even spots
+    shift the even bits
+        create a mask 01010101 in binary (which is 0x55) then shift them to the left by 1
+        to put them in the odd spots
+    """
+    # might not work in python because you should use the logic shift
+    # but in python we only have the arithmetic shift
+    return (((n & 0xaaaaaaaa) >> 1) | ((n & 0x55555555) << 1))
+
+# 5.8 draw line
+# given a screen with width, w, where w is divisible by 8 (the screen is a single array of bytes where each
+# byte can store 8 consecutive pixels)
+# implement a function that draws a horizontal line from (x1, y) to (x2, y)
+
+def drawLine(screen, width, x1, x2, y):
+    """
+    
+    """
     pass
-
-
