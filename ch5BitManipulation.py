@@ -235,6 +235,38 @@ def pairwiseSwap(n):
 
 def drawLine(screen, width, x1, x2, y):
     """
+    one solution is to set each pixel between x1 and x2 one by one
     
+    but another solution would be to set entire bytes all at once given that x1 and x2 are far away
+
     """
-    pass
+    startOffset = x1 % 8
+    firstFullByte = x1 / 8
+    if startOffset != 0:
+        firstFullByte += 1
+
+    endOffset = x2 % 8
+    lastFullByte = x2 / 8
+    if endOffset != 7:
+        lastFullByte -= 1
+
+    # set full bytes
+    for i in range(lastFullByte):
+        screen[(width / 8) * y + i] = 0xFF
+
+    # create masks for the start and end of the line
+    startMask = (0xFF >> startOffset)
+    endMask = (~0xFF >> (endOffset + 1))
+
+    # set start and end of the line
+    # case where x1 and x2 are in the same byte
+    if x1 / 8 == x2 / 8:
+        mask = startMask & endMask
+        screen[(width / 8) * y + (x1 / 8)] |= mask
+    else:
+        if startOffset != 0:
+            byteNumber = (width / 8) * y + firstFullByte - 1 
+            screen[byteNumber] |= startMask
+        if endOffset != 7:
+            byteNumber = (width / 8) * y + lastFullByte + 1 
+            screen[byteNumber] |= endMask
