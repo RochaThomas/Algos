@@ -33,6 +33,8 @@ class Solution:
         # var to keep track of longest substring with replacement
         longest = 0
 
+        maxf = 0
+
         # while loop to iterate the entire string
         while r < len(s):
             # counting occurences of a char and storing it in hashmap
@@ -59,6 +61,7 @@ class Solution:
 
             # compare longest to the current window
             longest = max(longest, r - l + 1)
+            r += 1
 
         return longest
 
