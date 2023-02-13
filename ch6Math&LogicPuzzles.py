@@ -83,5 +83,21 @@ with 31 dominos you can only cover up 31 whites and 31 blacks, never reaching th
 imagine a triangle where an ant starts on each vertex. what is the probability of a collision of ants given that they all walk
 at the same speed and the direction they choose to walk in is equally probable?
 
+a collision happens if 1 ant walks in a different direction than the other two
+the only way a collision doesn't happen is if all three walk in the same direction
+    prob of no collision
+    p(clockwise) = 1/2^3
+    p(counterclockwise) = 1/2^3
+    so p(same direction0 = (1/2)^3 + (1/2)^3 = 1/4
+p(collision) = 1 - p(no collision)
+1.00 - 0.25 = 0.75
+"""
+
+"""
+6.5 jugs of water
+given a 5qt jug, a 3qt jug, and an unlimited supply of water
+how would you come up with exaxtly 4 qts of water?
+you do not know where the half is in any jug
+
 
 """
