@@ -99,5 +99,44 @@ given a 5qt jug, a 3qt jug, and an unlimited supply of water
 how would you come up with exaxtly 4 qts of water?
 you do not know where the half is in any jug
 
+fill up 5qt pour into 3 quart
+leaving 2 qt in the 5 qt jug
+pour out the 3 qt
+move the 2qt from the 5qt to the 3qt
+fill up the 5qrt
+pour from the 5 qt to the 3 qt until the 3qt is full
+this leaves 4 qt in the 5 qt
+
+because the two sizes of the jugs are prime you can measure any value between 1 and the sum of the two jugs
+"""
+
+"""
+6.6 blue-eyed island
+a visitor comes to an island and says all blue eyed people have to leave. there is a flight ever night at 8 pm
+each person can see another persons eyes but they do not know their own and they aren't allowed to tell each other
+they know at least 1 person has blue eyes but not how many total
+how many days will it take the blue eyed people to leave
+
+this is a dumb question
+the answer is it will take as many nights as there are blue eyed people (c) but i think there are plot holes in the answer
+    if c = 1, they will notice no one else has blue eyes and figure they must be the one with blue eyes and leave
+    if c = 2, they will see the other person with blue eyes and realize on the second day that because the other blue eyed person
+        is still there, that c must be 2 and they are the second person with blue eyes and they both leave day 2
+    if c > 2...
+        basically the solution is saying that people will count how many blue eyed people are around and keep track of how many
+        days its been. once they pass the number of days that would be equivalent to c, all the blue eyed people will realize they
+        all have blue eyes and will leave together
+
+    i guess this makes some sense if it doesn't matter that people with not blue eyes might think they have blue eyes by the same
+    logic and leave thinking they have blue eyes
+        this would be refuted by the fact that the brown eyed people would also be counting c and the days so they wouldn't be confused
+still think this is dumb
+"""
+
+"""
+6.7 the apocalypse
+the queen declares that everyone is to have at least one girl and all families but follow this rule
+assuming all families stop having kids after they have a girl what would the gender ratio be?
+solve this logically then write a computer simulation of it
 
 """
