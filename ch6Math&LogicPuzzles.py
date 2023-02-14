@@ -208,11 +208,19 @@ start with 100 closed lockers, open all on the first pass, close every 2nd locke
 every third locker
 do 100 passes, how many lockers are open
 
-51 - 100 you toggle 1 locker
-whatever the state is at 50 is the answer
-after i is passed locker i will never be reset
-after the second pass locker # 2 will stay closed
+lockers are toggled on factors of themself
+15 toggled on 1 3 5 and 15
+doors are left open when the number of factors is odd
+door number has odd number of factors when number is a perfect square
+    because the factors counter part is itself 1,1 2,2 3,3 4,4 5,5 6,6 etc
+how many perfect squares are between 1 and 100
+10
+answer is 10
+1,4,9,16,25,36,49,64,81,100
+"""
 
+"""
+6.10 poison
 
 """
 
