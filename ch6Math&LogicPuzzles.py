@@ -139,4 +139,56 @@ the queen declares that everyone is to have at least one girl and all families b
 assuming all families stop having kids after they have a girl what would the gender ratio be?
 solve this logically then write a computer simulation of it
 
+There are two approaches to this
+mathematically speaking we can estimate the behavior of the gender ratio using a family of 6 kids as an example
+    P(G) = 1/2
+    P(BG) = 1/4 because of the families that have a boy P(B) or 50%, they will have a 50% chance of having the next be a girl
+    P(BBG) = 1/8
+    etc
+
+    P(BBBBBBG) = 1/128
+    summing all the probs to account for all situations
+    => 1/2 + 1/4 + 1/8 ... + 1/128 = 120/128
+    we can see the value inches close and closer to 1
+    this means that each family has an average of 1 boy with a guarantee of 1 girl
+    so 1:1 ratio
+logically its easier to digest
+    eliminating the groupings of families, the order of children being born will be a string of B's and G's
+    the probability of the next letter being a B or a G is still the exact same
+    its still 50:50
 """
+# simulation
+import random
+def runNFamilies(n):
+    boys = 0
+    girls = 0
+
+    for i in range(n):
+        genders = runOneFamily()
+        girls += genders[0]
+        boys += genders[1]
+    return girls/boys
+
+def runOneFamily():
+    boys = 0
+    girls = 0
+    while (girls == 0):
+        if (bool(random.getrandbits(1))):
+            girls += 1
+        else:
+            boys += 1
+    return [girls, boys]
+
+# print(runNFamilies(1000000))
+# value gets closer and closer to 1 with larger number of families => 1:1 ratio
+
+"""
+6.8 the egg drop problem
+there is building of 100 floors, if an egg drops from the Nth floor or higher it will break. Anything lower it won't break.
+Given two eggs find N while minimizing drops
+
+drop egg increasing level by the last floor * 2
+when one egg breaks, go to the last floor that it was safe from and increment floor 1 by 1 until it breaks
+that will be floor N
+"""
+
