@@ -221,6 +221,27 @@ answer is 10
 
 """
 6.10 poison
+1000 bottles of soda 1 is poisoned
+10 test strips that will turn positive permanently
+you can use the strip as many times as you want as long as it doesn't turn positive
+you can only run tests once per day and it takes 7 days to return a result
+how do you figure out which bottle is poisoned in as few days as possible
 
+10 strips 1000 bottles
+put 1-100 on strip 1
+101-200 on 2
+etc
+
+in 7 days you will narrow it down to 100 bottles
+do it again but 100/9 bottles per strip
+repeat the process until its 1:1
+
+better answer is to treat the bottles like bits
+10 bits can store 1024 numbers
+thus so can the bottles
+look at the bottles binary representation
+    if there is a 1 in the ith digit then add a drop from that bottle to the ith test strip
+after 7 days if test strip i is positive then set bit i to 1 for the result
+the binary of the bottles will read out the poisoned bottle
 """
 
