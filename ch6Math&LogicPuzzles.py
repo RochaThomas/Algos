@@ -187,8 +187,32 @@ def runOneFamily():
 there is building of 100 floors, if an egg drops from the Nth floor or higher it will break. Anything lower it won't break.
 Given two eggs find N while minimizing drops
 
-drop egg increasing level by the last floor * 2
-when one egg breaks, go to the last floor that it was safe from and increment floor 1 by 1 until it breaks
-that will be floor N
+to minimize the number of drops we have to consider load balancing between the two eggs
+if egg 1 is dropped at floor 20 and breaks then you need to drop egg 2 20 times to find n from 1 to 20
+if it doesnt break and you drop it at 40 and it breaks then you need to drop it 19 times from 21 to 40
+
+we need to balance the load so that the number of drops is consistent regardless of whether it breaks at drop 1 or last drop
+    to balance the load, since we know that every time egg 1 drops thats another step, we need to decrease egg 2 drops by 1 for
+    every 1 drop egg 1 makes
+    x + x - 1 + x - 2 + x - 3 ... + 1 = 100
+    x(x+1)/2 = 100
+    x = 13.65
+    we round up to 14 because going from 14...13...12...11, the last increment will land on 99 so it would only need 1 drop to
+    tell if n = 100
+    13 would land on 92 resulting in 8 extra drops
+"""
+
+"""
+6.9 100 lockers
+start with 100 closed lockers, open all on the first pass, close every 2nd locker on the second pass, on the third pass toggle
+every third locker
+do 100 passes, how many lockers are open
+
+51 - 100 you toggle 1 locker
+whatever the state is at 50 is the answer
+after i is passed locker i will never be reset
+after the second pass locker # 2 will stay closed
+
+
 """
 
