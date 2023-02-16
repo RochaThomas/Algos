@@ -74,5 +74,20 @@ respondent class
 7.3 jukebox
 design a musical jukebox using object-oriented principles
 
+jukebox class
+    has array of songs
+    has price
+    has queue of songs
+    has currentTotal
+    has currentSong
+    methods play, playNext, addSong, removeSong
 
+user class
+    has song
+    has money
+"""
+
+"""
+7.4 parking lot
+design a parking lot using object-oriented principles
 """
