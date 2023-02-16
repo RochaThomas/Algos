@@ -43,6 +43,7 @@ class Solution:
             # append the max as long as the window is the length of k
             if (r + 1) >= k:
                 res.append(nums[q[0]])
+                l += 1
 
             r += 1
         return res
