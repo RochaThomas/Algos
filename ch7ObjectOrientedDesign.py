@@ -38,5 +38,41 @@ if the manager isn't free then it goes to the director
 design classes and data structures for this problem
 implement a method dispatchCall() which assigns a call to the first available employee
 
+call handler class
+    has num of employee levels
+    has num of employess at each level
+    has list of employee levels corresponding to index
+    has array of employees
+    has a queue of calls
+
+    has a method getHandlerForCall which gets the first available employee who can handle the call
+    has method dispatchCall which routes the call to an employee or saves in queue if none are available
+        calls getHandlerForCall that gets employee of minimal rank to handle call
+            if employee available then set handler for call to that employee
+            else call goes into the queue
+    
+call class
+    has rank of employee who can handle the call
+    has caller
+    has handler
+    methods for reply, increment rank, and disconnect
+
+employee class
+    has currentCall
+    has rank
+    methods for receiveCall, callCompleted, escalateAndReassign, assignNewCall, isFree
+
+director class
+    extends employee and rank is director
+manager class
+    extends employee and rank is manager
+respondent class
+    extends employee and rank is respondent
+"""
+
+"""
+7.3 jukebox
+design a musical jukebox using object-oriented principles
+
 
 """
