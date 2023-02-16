@@ -90,4 +90,26 @@ user class
 """
 7.4 parking lot
 design a parking lot using object-oriented principles
+
+parking lot class
+    has array of spots
+    method needs spot
+        takes in car
+        finds free spot
+        sets spot car
+        sets car needsSpot
+    method carLeft
+
+spots class
+    has car
+
+car class
+    had needsSpot
+"""
+
+"""
+7.5 online-book reader
+design data structures for an online book reader system
+
+
 """
