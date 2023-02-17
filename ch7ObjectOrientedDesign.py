@@ -111,5 +111,32 @@ car class
 7.5 online-book reader
 design data structures for an online book reader system
 
+online reader system class
+    has library, userManager, and display
+    methods getActiveBook, setActiveBook, getActiveUser, getActiveUser
+
+library class
+    has hashmap of books
+    methods addBook, remove book, findBook
+
+user manager class
+    has hashmap of books
+    methods addUser, find, and remove
+
+display class
+    has activeBook, activeUser, and pageNumber
+    methods displayUser, displayBook, turnPageForward, turnPageBackward
+
+book class
+    has bookId and details
+user class
+    has userId, details, and accountType
+"""
+
+"""
+7.6 jigsaw
+implement an NxN jigsaw puzzle. design the data structures and explain an algorithm to solve the puzzle. Assume there
+is a fitsWith method that returns true for two pieces if the two edges fit together
+
 
 """
