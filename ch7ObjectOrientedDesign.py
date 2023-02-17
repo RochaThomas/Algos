@@ -138,5 +138,5 @@ user class
 implement an NxN jigsaw puzzle. design the data structures and explain an algorithm to solve the puzzle. Assume there
 is a fitsWith method that returns true for two pieces if the two edges fit together
 
-
+wayyy too confusing. revisit this solution in the book
 """
