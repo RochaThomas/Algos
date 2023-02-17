@@ -151,5 +151,8 @@ also too complex to note here. take a look at the indepth solutionn on page 323
 
 """
 7.8 othello
+othello is played by placing tiles one by one. if a piece is surrounded on top and bottom or left and right by the opposite 
+color then flip the tile. game ends when there are no other moves to be made. winner is who evers color shows more
 
+robust solution page 326
 """
