@@ -3,6 +3,12 @@
 
 # interview questions
 
+# MANY OF THESE SOLUTIONS ARE TOO ROBUST AND COMPLEX TO SUMMARIZE HERE
+# TOO HARD TO CONDENSE SOLUTIONS BASED ON MY CURRENT UNDERSTANDING OF OOD
+# MANY OF THE ANSWERS HERE JUST REFERENCE THE SOLUTION PAGE NUMBER
+# WITH A BETTER UNDERSTANDINFG OF OOP AND OOD IT MAY BE SIMPLER
+# SUPPLEMENT YOUR UNDERSTANDING THEN REVISIT THIS CHAPTER
+
 """
 7.1 deck of cards
 design the data structures of a generic deck of cards. explain how you would subclass the data structure to implement
@@ -168,5 +174,8 @@ see book pg 329
 """
 
 """
-7.10 
+7.10 minesweeper
+design and implement a text based minesweeper game
+
+read pg 334 for a more in depth description of the problem and the solution
 """
