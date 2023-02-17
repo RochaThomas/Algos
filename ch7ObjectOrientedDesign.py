@@ -155,4 +155,14 @@ othello is played by placing tiles one by one. if a piece is surrounded on top a
 color then flip the tile. game ends when there are no other moves to be made. winner is who evers color shows more
 
 robust solution page 326
+remember, often times what you did is not important, its more important WHY you did what you did. 
+during interviews always discuss why you are doing something and what the tradeoffs are for that method as opposed to another
+"""
+
+"""
+7.9 circular array
+implement a circular array class that supports an array-like data structure which can be efficiently rotated
+should support iteration
+
+see book pg 329
 """
