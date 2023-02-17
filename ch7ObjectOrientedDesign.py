@@ -140,3 +140,11 @@ is a fitsWith method that returns true for two pieces if the two edges fit toget
 
 wayyy too confusing. revisit this solution in the book
 """
+
+"""
+7.7 chat server
+explain how you would design a chat server. provided details about the various backend components, classes, and methods.
+what would be the hardest problem to solve?
+
+
+"""
