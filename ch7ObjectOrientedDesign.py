@@ -179,3 +179,11 @@ design and implement a text based minesweeper game
 
 read pg 334 for a more in depth description of the problem and the solution
 """
+
+"""
+7.11 file system
+explain the data structures and algorithms that you would use to design an in-memory file system
+
+pg 337
+"""
+
