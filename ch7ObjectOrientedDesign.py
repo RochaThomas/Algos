@@ -187,3 +187,9 @@ explain the data structures and algorithms that you would use to design an in-me
 pg 337
 """
 
+"""
+7.12 hash table
+design and implement a hash table which uses chaining (linked lists) to handle collisions
+
+pg 339
+"""
