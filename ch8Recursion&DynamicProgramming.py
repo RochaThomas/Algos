@@ -47,3 +47,73 @@ def robot_in_a_grid(maze):
 
     return None
     
+# 8.3 magic index
+# a magic index in an array if defined to be an index such that A[i] = i. given a sorted array of distinct integers
+# write an algo to find a magic index if one exists in array A
+
+# def magic_index(a, offset = 0):
+    """
+    if the value at the beginning of the array is already larger than a certain index, then the magic index cannot be between
+    the beginning of the array and the index of the value at the beginning of the array
+        thus you skip to the index of the beginning value and try again
+    
+    if a[i] > i: skip to a[a[i]]
+    if a[i] < i: keep interating through the array
+    if a[i] == i return i
+    else return False
+    """
+    # i believe this code would work but... the book has a different solution
+    # for i in range(len(a)):
+    #     val = a[i]
+    #     if val > i + offset:
+    #         return magic_index(a[val: ], offset + i)
+    #     elif val == i + offset:
+    #         return val
+    
+    # return False
+
+# initial is (a, 0, len(a) - 1)
+def magic_fast(a, start, end):
+    """
+    similar to binary search, given sorted and distinct values
+    a little tough to understand so look at book example array closely to understand why we know where to look
+    """
+    if end < start:
+        return -1
+    mid = (start + end) / 2
+    if a[mid] == mid:
+        return mid
+    # if the value at mid is too large then the magic index must be to the left
+    elif a[mid] > mid:
+        magic_fast(a, start, mid - 1)
+    # if the value at mid is too small then the magic index must be to the right becasue we have distinct nums
+    # so because mid is already that value then array[value] cannot also be the value at mid
+    else:
+        return magic_fast(a, mid + 1, end)
+
+def magic_fast_non_distinct(a, start, end):
+    if end < start:
+        return -1
+    mid = (start + end) / 2
+    if a[mid] == mid:
+        return mid
+    
+    # search left
+    # take the min here because with non distinct values
+    # the magic index could still appear
+    # imagine mid = 5 and a[5] = 2 but a[2] = 2 as well
+    leftIndex = min(mid - 1, a[mid])
+    left = magic_fast_non_distinct(a, start, leftIndex)
+    if left >= 0:
+        return left
+    
+    # search right
+    rightIndex = max(mid + 1, a[mid])
+    right = magic_fast_non_distinct(a, rightIndex, end)
+    
+    return right
+
+# 8.4 power set
+# write a method to return all subsets of a set
+def power_set(s):
+    pass
