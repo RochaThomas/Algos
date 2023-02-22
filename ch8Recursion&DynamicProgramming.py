@@ -172,4 +172,18 @@ def recursive_multiply(a, b):
 #   a disk cannot be placed on top of a smaller disk
 # write a program to move all the disks from the first tower to the last using stacks
 def towers_of_hanoi():
+    """
+    solution to this problem involves object oriented programming 
+    check page 354 for solution
+    the solution idea is
+        base case: when n = 0 return
+        move top n - 1disks from origin to buffer, using destination as a buffer
+        move top from origin to destination
+        move top n - 1 disks from buffer to destination, using origin as a buffer
+    """
+    pass
+
+# 8.7 permutations without dups
+# write a method to compute all permutations of a string of unique characters
+def perms_without_dups(s):
     pass
