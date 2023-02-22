@@ -235,3 +235,4 @@ def perms_with_dups(s):
     helper(table, "", len(s), res)
 
     return res
+
