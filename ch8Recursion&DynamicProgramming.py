@@ -236,3 +236,21 @@ def perms_with_dups(s):
 
     return res
 
+# 8.9 parens
+# implement an algorithm to print all valid combinations of n pairs of parenthesis
+def parens(n):
+    def add_parens(list, left_rem, right_rem, str, index):
+        # invalid state
+        if left_rem < 0 or right_rem  < left_rem: return
+
+        if left_rem == 0 and right_rem == 0:
+            list.append(str.copy)
+        else:
+            # add right and recurse
+            str[index] = '('
+            add_parens(list, left_rem, right_rem - 1, str, index + 1)
+
+    str = []
+    list = []
+    add_parens(list, n, n, str, 0)
+    return list
