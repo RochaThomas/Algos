@@ -117,21 +117,28 @@ def magic_fast_non_distinct(a, start, end):
 # write a method to return all subsets of a set
 
 # this makes no sense to me. lets what a video
-# below code probably doesn't even work
+# neetcode explains a python solution susinctly
+# video is neetcode Subsets - Backtracking - Leetcode 78
 def power_set(s, i):
-    if len(s) == i:
-        all_subsets = []
-        all_subsets.append([])
-    else:
-        all_subsets = power_set(s, i + 1)
-        item = s.get(i)
-        more_subsets = []
-        for subset in all_subsets:
-            new_subset = []
-            new_subset.extend(subset)
-            more_subsets.append(new_subset)
-        all_subsets.extend(more_subsets)
+    all_subsets = []
 
+    subset = []
+    
+    def get_subset(i):
+        if i >= len(s):
+            all_subsets.append(subset.copy())
+            return
+        # there are two decisions for creating subsets of every value of every index
+        # to add the value or to not add the value
+        # add the value
+        subset.append(s[i])
+        get_subset(i + 1)
+
+        # not adding the value
+        subset.pop()
+        get_subset(i + 1)
+    
+    get_subset(0)
     return all_subsets
 
 # 8.5 recursive multiply
