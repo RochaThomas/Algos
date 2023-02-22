@@ -146,4 +146,30 @@ def power_set(s, i):
 # you can use + - or bit shifting
 
 def recursive_multiply(a, b):
+    bigger = a if a > b else b
+    smaller  = a if a < b else b
+
+    def helper(smaller, bigger):
+        if smaller == 0: return 0
+        elif smaller == 1: return bigger
+
+        s = smaller >> 1
+        halfProd = helper(s, bigger)
+
+        if smaller % 2 == 0:
+            return halfProd + halfProd
+        else:
+            return halfProd + halfProd + bigger
+
+    return helper(smaller, bigger)
+
+# 8.6 towers of hanoi
+# you have 3 towers of n disks of different sizes which can slide onto any tower
+# puzzle starts with disks sorted in ascending order from top to bottom
+# rule
+#   only one disk can be moved at a time
+#   a disk is slid off the top of one tower onto another
+#   a disk cannot be placed on top of a smaller disk
+# write a program to move all the disks from the first tower to the last using stacks
+def towers_of_hanoi():
     pass
