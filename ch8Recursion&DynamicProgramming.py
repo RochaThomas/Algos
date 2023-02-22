@@ -203,3 +203,35 @@ def perms_without_dups(s):
             res.append(s[i] + strings)
 
     return res
+
+# 8.8 permutations with duplicates
+# write a method to compute all permutations of a string whose characters are not necessarily unique. the list of permutations should
+# not have duplicates
+
+def perms_with_dups(s):
+    res = []
+
+    def build_freq_table(s):
+        hash = {}
+        for c in s:
+            hash[c] = 1 + hash.get(c, 0)
+        return hash
+
+    def helper(table, prefix, remaining, res):
+        # base case
+        if remaining == 0:
+            res.add(prefix)
+            return
+
+        # try remaining letters for next perm and generate remaining permutations
+        for c in table.keys():
+            count = table.get(c)
+            if count > 0:
+                table[c] -= 1
+                helper(table, prefix + c, remaining - 1, res)
+                table[c] = count
+
+    table = build_freq_table(s)
+    helper(table, "", len(s), res)
+
+    return res
