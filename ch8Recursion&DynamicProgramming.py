@@ -186,4 +186,20 @@ def towers_of_hanoi():
 # 8.7 permutations without dups
 # write a method to compute all permutations of a string of unique characters
 def perms_without_dups(s):
-    pass
+    length = len(s)
+    res = []
+    # base case
+    if length == 0:
+        res.append("")
+        return res
+    
+    for i in range(length):
+        # remove char i and find permutations of remaining chars
+        before =  s[:i]
+        after = s[i + 1:]
+        # partials will find permutations of all the chars in s minus s[i]
+        partials = perms_without_dups(before + after)
+        for strings in partials:
+            res.append(s[i] + strings)
+
+    return res
