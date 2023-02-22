@@ -115,5 +115,28 @@ def magic_fast_non_distinct(a, start, end):
 
 # 8.4 power set
 # write a method to return all subsets of a set
-def power_set(s):
+
+# this makes no sense to me. lets what a video
+# below code probably doesn't even work
+def power_set(s, i):
+    if len(s) == i:
+        all_subsets = []
+        all_subsets.append([])
+    else:
+        all_subsets = power_set(s, i + 1)
+        item = s.get(i)
+        more_subsets = []
+        for subset in all_subsets:
+            new_subset = []
+            new_subset.extend(subset)
+            more_subsets.append(new_subset)
+        all_subsets.extend(more_subsets)
+
+    return all_subsets
+
+# 8.5 recursive multiply
+# write a recursive function to multiply two positive integers without using the * or / operators
+# you can use + - or bit shifting
+
+def recursive_multiply(a, b):
     pass
