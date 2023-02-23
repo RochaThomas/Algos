@@ -359,3 +359,15 @@ def stack_of_boxes(boxes):
     """
     pass
 
+# 8.14 boolean evaluation
+# given a boolean expression consisting of 0,1,&,|, and ^ and a desire result value boolean, implement a function to count
+# the number of ways of parenthesizing the expression such that it evaluates to result
+
+# THIS IS FROM THE BOOK
+# I DONT REALLY UNDERSTAND THIS
+def boolean_expression():
+    """
+    the solution is to complex to explain here concisely
+    go to page 368
+    """
+    pass
