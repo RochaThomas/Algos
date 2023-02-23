@@ -343,3 +343,19 @@ def eight_queens(row, columns, results):
             if check_valid(columns, row, c):
                 columns[row] = columns
                 eight_queens(row + 1, columns, results)
+
+# 8.13 stack of boxes
+# given a stack of n boxes with widths w, heights h, and depths d.
+# the boxes cannot be rotated and can only stack on top of one another if each box in the stack
+# is larger than the box above it in all dimensions
+# implement a method to compute the height of the tallest possible stack
+def stack_of_boxes(boxes):
+    """
+    this solution requires class implementation of boxes in ordered to compare them
+    revisit this problem later
+    2 ways to do this
+        first way is to use caching and see what the biggest stack you can build with box n as the base
+        second way is to make a choice at each step to put the box in the stack or to not put the box in the stack
+    """
+    pass
+
