@@ -261,3 +261,32 @@ def parens(n):
     list = []
     add_parens(list, n, n, str, 0)
     return list
+
+# 8.10 paint fill
+# create a paint fill function like one might see on image editing programs
+# given a screen (represented by a 2D array of colors), a point, and a new color, fill in the surrounding
+# area until the color changes from the original color
+
+# GOOD PRACTICE QUESTION
+# IMAGINE DEPTH FIRST SEARCH ON A GRAPH
+def paint_fill(screen, row, col, new_color):
+    if screen[row][col] == new_color: return False
+    def paint_fill_helper(screen, row, col, old_color, new_color):
+        if row < 0 or row >= len(screen) or col < 0 or col >= len(screen[0]):
+            return False
+        if screen[row][col] == old_color:
+            screen[row][col] == new_color
+            # up 1 pixel
+            paint_fill_helper(screen, row + 1, col, old_color, new_color)
+            # right 1 pixel
+            paint_fill_helper(screen, row, col + 1, old_color, new_color)
+            # down 1 pixel
+            paint_fill_helper(screen, row - 1, col, old_color, new_color)
+            # left 1 pixel
+            paint_fill_helper(screen, row, col - 1, old_color, new_color)
+        return True
+
+    return paint_fill_helper(screen, row, col, screen[row][col], new_color)
+
+# 8.11 coins
+# 
