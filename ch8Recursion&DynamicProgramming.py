@@ -289,4 +289,29 @@ def paint_fill(screen, row, col, new_color):
     return paint_fill_helper(screen, row, col, screen[row][col], new_color)
 
 # 8.11 coins
-# 
+# given an infinite number of quarters, dimes, nickels, and pennies
+# write code to calculate the number of ways of representing n cents
+
+# KIND OF MAKES SENSE BUT A LITTLE HARD TO FOLLOW
+# I PREFER HASHMAPS OVER ARRAYS FOR CACHING
+def coins(n, denoms):
+    map = [[]]
+    def make_change_helper(total, denoms, index, map):
+        # check map for prior results
+        if map[total][index] > 0:
+            return map[total][index]
+        coin = denoms[index]
+        if index == len(denoms) - 1:
+            remaining = total % coin
+            return 1 if remaining == 0 else 0
+        
+        numberOfWays = 0
+        amount = 0
+        while amount <= total:
+            numberOfWays += make_change_helper(total - amount, denoms, index + 1, map)
+            amount += coin
+
+        # update map
+        map[total][index] = numberOfWays
+
+        return numberOfWays
