@@ -315,3 +315,31 @@ def coins(n, denoms):
         map[total][index] = numberOfWays
 
         return numberOfWays
+
+# 8.12 eight queens
+# write an algo to print all the ways of arranging 8 queens on an 8x8 chess board such that none of them
+# share the same row, column, or diagonal
+def eight_queens(row, columns, results):
+    # check if the given row and column are a valid spot to put a queen
+    # we dont need to check row because we already are iterating through the rows 1 by 1
+    # so its not possible they would be in the same row
+    def check_valid(columns, row1, col1):
+        for row2 in range(row1):
+            col2 = columns[row2]
+            # check if same column
+            if col1 == col2:
+                return False
+            
+            columnDistance = abs(col2 - col1)
+            rowDistance = row1 - row2
+            # check if they are on the same diagonal
+            if columnDistance == rowDistance:
+                return False
+        return True
+
+    if row == 8: results.append(columns.copy())
+    else:
+        for c in range(8):
+            if check_valid(columns, row, c):
+                columns[row] = columns
+                eight_queens(row + 1, columns, results)
