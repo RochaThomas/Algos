@@ -14,3 +14,6 @@
 
 # 9.4 duplicate urls
 # complete solution pg 380
+
+# 9.5 cache
+# complete solution page 381
