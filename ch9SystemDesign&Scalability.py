@@ -20,3 +20,7 @@
 
 # 9.6 sales rank
 # complete solution page 385
+
+# 9.7 personal financial manager
+# complete solution page 388
+
