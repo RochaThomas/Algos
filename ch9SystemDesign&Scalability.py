@@ -17,3 +17,6 @@
 
 # 9.5 cache
 # complete solution page 381
+
+# 9.6 sales rank
+# complete solution page 385
