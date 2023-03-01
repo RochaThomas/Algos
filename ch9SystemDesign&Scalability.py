@@ -4,3 +4,5 @@
 # interview questions
 
 # 9.1 stock data
+# complete solution pg 374
+
