@@ -24,3 +24,5 @@
 # 9.7 personal financial manager
 # complete solution page 388
 
+# 9.8 pastebin
+# complete solution pg 392
