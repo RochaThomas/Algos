@@ -48,4 +48,7 @@
 # if less than lowest of middle then search lesser rows
 # if greater than greatest of middle then search greater rows
 # if in the rows range, do a normal binary search
+# jk this problem is different, it isn't specifying that the end of the previous row is less than the beginning of the next row
+# so partition the matrix into 4 quadrants based on the middle value and recursively search
+# maybe find a solution to this
 
