@@ -12,3 +12,8 @@
 # make a hashmap where key is a sorted string and value is an array of strings, add string to array if it matches
 # key when sorted, return hashmap values
 
+# 10.3 search in rotated array
+# given a sorted array that has been rotated x times find a target value
+# the books solution is subpar and unclear, watch neetcode video for this problem
+# just a modified binary search
+
