@@ -41,3 +41,11 @@
 # write an algo to print all the duplicate elements in the array
 # i do not understand this solution, look up how to create and use bit vectors
 
+# 10.9 sorted matrix search
+# given an m x n matrix where each row and col is sorted in ascending order write an algorithm to find an element
+# basically a double binary search
+# binary search 1 checks to see if target is in range of middle array
+# if less than lowest of middle then search lesser rows
+# if greater than greatest of middle then search greater rows
+# if in the rows range, do a normal binary search
+
