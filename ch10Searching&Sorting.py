@@ -30,3 +30,9 @@
 # 10.6 sort big file
 # imagine a 20 gb file with 1 string per line how do you sort the file
 # external sort... search this up
+
+# 10.7 missing int
+# given an input file with 4 billion non neg ints, write an algo that will give you a int that is not in the file
+# you only have 1 gb of space
+# i do not understand the solution to this
+
