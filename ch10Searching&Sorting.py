@@ -58,3 +58,9 @@
 # use a binary search tree where every node keeps track of the size of its left branch
 # so upon insertion and search, when you move right you just add 1 to the size of left branch stored in the node
 
+# 10.11 peaks and valleys
+# peak is a value greater than or equal to adjacent ints, valley is a val less than or equal to adjacent ints
+# given an input array, sort the array into an array of alternating peaks and valleys
+# iterate through the array taking 3 values at a time and ensuring the largest is in the center
+# the last value in from previous 3, should be included in the next window of 3
+# in order to avoid a valley being placed next to a smaller valley and thus not having a valley at all
