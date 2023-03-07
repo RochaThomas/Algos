@@ -27,3 +27,6 @@
 # given a sorted array of strings interspersed with empty strings write a method to search for a string
 # just do binary search comparing string, if you hit an empty string search for the nearest nonempty
 
+# 10.6 sort big file
+# imagine a 20 gb file with 1 string per line how do you sort the file
+# external sort... search this up
