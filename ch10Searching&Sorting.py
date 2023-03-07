@@ -22,3 +22,8 @@
 # to get the the ith value given i, find a target value
 # estimate size by increasing by 2 exponentially until you hit a null value
 # then run binary search
+
+# 10.5 sparse search
+# given a sorted array of strings interspersed with empty strings write a method to search for a string
+# just do binary search comparing string, if you hit an empty string search for the nearest nonempty
+
