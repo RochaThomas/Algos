@@ -17,3 +17,8 @@
 # the books solution is subpar and unclear, watch neetcode video for this problem
 # just a modified binary search
 
+# 10.4 sorted search, no size
+# given a sorted array like data structure that does not have a method to get the length and only has a method
+# to get the the ith value given i, find a target value
+# estimate size by increasing by 2 exponentially until you hit a null value
+# then run binary search
