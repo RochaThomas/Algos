@@ -52,3 +52,9 @@
 # so partition the matrix into 4 quadrants based on the middle value and recursively search
 # maybe find a solution to this
 
+# 10.10 rank from stream
+# while taking in a stream of integers, write a method that will given you the rank of an integer x
+# where the rank is how many read ints are less than or equal to x
+# use a binary search tree where every node keeps track of the size of its left branch
+# so upon insertion and search, when you move right you just add 1 to the size of left branch stored in the node
+
