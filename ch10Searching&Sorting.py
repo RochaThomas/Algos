@@ -36,3 +36,8 @@
 # you only have 1 gb of space
 # i do not understand the solution to this
 
+# 10.8 find duplicates
+# given an array with nums 1 - N where N < 32,000 and only 4 kb memory
+# write an algo to print all the duplicate elements in the array
+# i do not understand this solution, look up how to create and use bit vectors
+
