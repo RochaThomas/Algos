@@ -25,12 +25,7 @@ class Solution:
                 B = B.next
             curr = curr.next
 
-        finish = A if A else B
-
-        while finish:
-            curr.next = finish
-            finish = finish.next
-            curr = curr.next
+        curr.next = A if A else B
         
         return dummy.next
 
