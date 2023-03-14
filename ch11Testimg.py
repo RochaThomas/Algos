@@ -59,3 +59,16 @@ for each user measure the response time, data, i/o, etc.
 gather data and analyze the results
 """
 
+# 11.5 test a pen
+# how would you test a pen?
+"""
+first ask a lot of questions about the pen and the type of pen
+ask who what where when why and how
+once you understand what the pen is and who its designed for you can formulate tests based on the use
+fact check: is it felt tip? is it one of the design colors?
+intended use: does the pen draw properly on clothes?
+intended use: does it wash off? does it wash off after a long time? does it wash off in hot or cold water or both?
+safety: if it safe for child use? non-toxic?
+unintended use: what else might a child do with the pen? write on not clothes? chew it? throw it? step on it?
+"""
+
