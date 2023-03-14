@@ -27,3 +27,26 @@ learn as much about the app as possible then maybe search for one of these mista
 if nothing fixes it then try to see if any other external applications running in the system are interfering with the crashing app
 """
 
+# 11.3 chess test
+# We have a method used in a chess game called canMoveTo(int x, int y)
+# This method is part of the Piece class and returns whether or not a the piece can move to position (x, y)
+# How would you test this method?
+"""
+extreme testing so that the program does not crash on bad inputs
+    test these extreme cases
+    negative nums, too large of nums for x and y, completely full board, empty or nearly empty board,
+    way more whites than blacks, and way more blacks than whites
+    make sure to know what to return; return false? throw error exception?
+general testing
+    the idea is basically to test every possible board but there are too many possible boards so perform a reasonable coverage
+    test every piece thats in chess against another piece in every directions
+    foreach piece a
+        for each other type of piece b (6 types  + empty space)
+            foreach direction d
+                create a board with piece a
+                place piece b in direction d
+                try to move - check return value
+    we can't test everything so focus on the essentials
+"""
+
+# 
