@@ -72,3 +72,13 @@ safety: if it safe for child use? non-toxic?
 unintended use: what else might a child do with the pen? write on not clothes? chew it? throw it? step on it?
 """
 
+# 11.6 testing an atm
+# how would you test and ATM in a distributed banking system?
+"""
+again ask questions to understand the use 5 w's and how
+basic function probably are: loggin in, withdrawing, depositing, checking balance, and transferring money
+systematically go through each function and think about what needs to be tested for each other those functions
+use a mix of automated testing for standard scenarios and race conditions; and manual testing for edge cases such as
+low balance, new account, nonexisting account
+prioritize security
+"""
