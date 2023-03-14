@@ -49,4 +49,13 @@ general testing
     we can't test everything so focus on the essentials
 """
 
-# 
+# 11.4 no test tools
+# how would you load test a webpage without using any test tools?
+"""
+we need to test response time, throughput, resource utilizarion, and maximum load that the system can bear
+we write our own testing tool basically
+creates thousands of users. write a multithreaded program where each thread simulates an active user
+for each user measure the response time, data, i/o, etc.
+gather data and analyze the results
+"""
+
