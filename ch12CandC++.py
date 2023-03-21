@@ -83,3 +83,11 @@ Shallow copies are generally used when passing information about a complex struc
 duplication of data. Must be careful when deleting shallow copies. Shallow copies are rarely used.
 """
 
+# 12.6 volatile
+# what is the significance of the keyword volatile in C?
+"""
+Volatile tells the compiler that the value of variable it is applied to can change from the outside
+without any update done by the code. This can be caused by the hardware, OS, or another thread.
+Because it can change, the complier will reload the value each time from memory
+Volatile can be used well in multithreaded programs
+"""
