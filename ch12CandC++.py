@@ -66,3 +66,9 @@ search time of the hash map would be negligable
 
 # 12.4 virtual functions
 # how do virtual functions work in C++
+"""
+Virtual functions depend on vtables. Vtables are constructed when a class function is declared as virtual.
+This table stores the addresses of the virtual functions of this class.
+If a derived class does not override the virtual function then the derived class's vtable stores the
+reference to the parent class's vtable
+"""
