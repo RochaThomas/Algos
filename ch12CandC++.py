@@ -135,5 +135,14 @@ DO FURTHER RESEARCH TO UNDERSTAND THE QUESTION FIRST AND THEN THE SOLUTION
 # write a function in c called my2DAlloc which allocates a 2d array. Minimize the number of calls to malloc and make sure that
 # the memory is accessible by the notation arr[i][j]
 """
+DO FURTHER RESEARCH TO UNDERSTAND THE QUESTION FIRST AND THEN THE SOLUTION
+create a 1d array of pointers
+for each array index, create a new 1d array
+this gives a 2d array that can be accessed through array indices
 
+to decrease malloc calls
+the array that each pointer is pointing to is stored in contiguous memory
+first the pointer array than each individual array follows one after another
+
+this continguous memory solution also allows us to free the memory in 1 call
 """
