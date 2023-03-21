@@ -21,3 +21,30 @@ var will tell you the oldest line and the array will contain the k last lines
 
 # 12.2 reverse string
 # implement a function void reverse(char* str) in C or C++ which reverses a null terminated string
+"""
+void reverse(char* str) {
+    char temp;
+    if (str) {
+        while (*end) { 
+            # find the end of the string by iterating through the string
+            ++end
+        }
+        # set end back 1 so its the last letter since end would be at null
+        --end
+        # swap chars at the beginning of the string with chars at the end of the string
+        # until the pointers meet
+        while (str < end) {
+            temp = *str;
+            *str++ = *end;
+            *end-- = tmp;
+        }
+    }
+}
+"""
+
+# 12.3 hash table vs stl map
+# compare and contrast a hash table and an stl map. how is a hash table implemented? if the number of 
+# inputs is small, which data structure can be used instead of a hash table
+"""
+
+"""
