@@ -114,5 +114,19 @@ this allows us to recreate the structure while also detecting loops
 # it automatically counts the number of references to a smart pointer object and frees the object of type T when the reference
 # count hits 0
 """
+COMPLICATED PROBLEM TO THINK THROUGH WITHOUT HINTS AND HELP
+needs a reference count var that increments when we add a new reference to the obj
+needs constructor and deconstructor
+    constructor points to obj and sets counter to 1
+    deconstructor decrements every time a reference is destroyed
+        frees the memory if the decrement results in ref count to be 0
+need to handle when one smart pointer points to another
+    decrement old and increment new when this happens
+"""
+
+# 12.10 malloc
+# write an aligned malloc and free function that supports allocatiing memory such that the memory address returned
+# is divisible by a specific power of two
+"""
 
 """
