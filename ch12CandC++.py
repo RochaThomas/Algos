@@ -72,3 +72,14 @@ This table stores the addresses of the virtual functions of this class.
 If a derived class does not override the virtual function then the derived class's vtable stores the
 reference to the parent class's vtable
 """
+
+# 12.5 shallow vs deep copy
+# what is the difference between a deep and a shallow copy? explain how you would use each.
+"""
+A shallow copy copies all the member values from one object to another. A deep copy does all this
+and also deep copues any pointer objects
+
+Shallow copies are generally used when passing information about a complex structure without actual
+duplication of data. Must be careful when deleting shallow copies. Shallow copies are rarely used.
+"""
+
