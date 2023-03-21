@@ -105,4 +105,14 @@ it is of type child not parent so it won't work if its not virtual
 # write a method that takes a pointer to a node structure as a parameter and returns a complete copy of the passed
 # in data structure. the node data structure contains two pointers to other nodes 
 """
+maintain a hash map from a node address in the original structure to the corresponding node in the new copy
+this allows us to recreate the structure while also detecting loops
+"""
+
+# 12.9 smart pointer
+# write a smart pointer class. smart pointer is a data type that simulates a pointer and provides automatic garbage colletion
+# it automatically counts the number of references to a smart pointer object and frees the object of type T when the reference
+# count hits 0
+"""
+
 """
