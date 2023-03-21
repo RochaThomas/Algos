@@ -91,3 +91,18 @@ without any update done by the code. This can be caused by the hardware, OS, or 
 Because it can change, the complier will reload the value each time from memory
 Volatile can be used well in multithreaded programs
 """
+
+# 12.7 virtual base class
+# why does a deconstructor in a base class need to be declared virtual?
+"""
+virtual functions are used to call the most derived implementation of a function.
+call the child version of a function not the parent
+so deconstructors must be virtual so that it can erase the object of type child from memory
+it is of type child not parent so it won't work if its not virtual
+"""
+
+# 12.8 copy node
+# write a method that takes a pointer to a node structure as a parameter and returns a complete copy of the passed
+# in data structure. the node data structure contains two pointers to other nodes 
+"""
+"""
