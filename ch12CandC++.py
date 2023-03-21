@@ -46,5 +46,23 @@ void reverse(char* str) {
 # compare and contrast a hash table and an stl map. how is a hash table implemented? if the number of 
 # inputs is small, which data structure can be used instead of a hash table
 """
+a hash table hashes a key that finds the index where the value is stored. It uses chaining for storing
+multiple values at a particular index to avoid collisions
+An STL map inserts key value pairs in a binary search tree and does not have to deal with handling
+collisions
+The search time for a hash table is O(1) while an STL's is O(log n)
 
+A hash table is implemented by using an array of linked lists where each node in the linked list stores
+the value and the original key
+    we use a good hash function to distribute the keys well (decreases collisions)
+    need a method to handle collisions which are inevitable (usually through chaining but there are
+        other ways)
+    need methods to dynamically increase or decrease the size of the hash table
+
+An STL map or a binary search tree can be used instead of a hash table if there is a small number of
+values to be stored because the difference in performance between the O(log n) stl map and the O(1)
+search time of the hash map would be negligable
 """
+
+# 12.4 virtual functions
+# how do virtual functions work in C++
