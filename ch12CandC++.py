@@ -128,5 +128,12 @@ need to handle when one smart pointer points to another
 # write an aligned malloc and free function that supports allocatiing memory such that the memory address returned
 # is divisible by a specific power of two
 """
+DO FURTHER RESEARCH TO UNDERSTAND THE QUESTION FIRST AND THEN THE SOLUTION
+"""
+
+# 12.11 2d alloc
+# write a function in c called my2DAlloc which allocates a 2d array. Minimize the number of calls to malloc and make sure that
+# the memory is accessible by the notation arr[i][j]
+"""
 
 """
