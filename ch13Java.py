@@ -99,3 +99,24 @@ why use this?
     you can call methods by name without knowing the method in advance (ex. you let the user create the method name)
 """
 
+# 13.7 lambda expressions
+# there is a class country with methods getContinent and getPopulation. write a function int getPopulation(
+# List<Country> countries, String continent) that computes the total population of a given continent given a list
+# all the countries and teh name of a continent
+"""
+int getPopulation(List<Country> countries, String continent) {
+    # filter countries
+    Stream<Country> sublist = countries.stream().filter(
+        country -> {return country.getContinent().equals(continent);}
+    );
+
+    # convert to list of populations
+    Stream<Integer> populations = sublist.map(
+        c -> c.getPopulation()
+    );
+
+    # sum the list
+    int population = populations.reduce(0, (a, b) -> a + b);
+}
+"""
+
