@@ -71,3 +71,17 @@ some other differences
     in c++ instances with different type parameters are different types
 """
 
+# 13.5 treemap, hashmap, linkedhashmap
+# explain the differences between treemap, hashmap, and linkedhashmap. provide an example of each
+"""
+hashmap - O(1) lookup and insertion, implemented by an array of linked lists
+treemap - O(logN) lookup and insertion, keys are ordered, implemented by redBlackTree, can implement comparable interface
+linkedhashmap - O(1) look up and insertion, hashmap where items have a previous and next pointer, allows you to order items in
+    the hashmap
+
+the differences are the ordering and big O
+linkedhashmap gives you the order of insertion
+treemap gives you sorted order
+hashmap gives you random order
+"""
+
