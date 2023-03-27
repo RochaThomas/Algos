@@ -120,3 +120,18 @@ int getPopulation(List<Country> countries, String continent) {
 }
 """
 
+# 13.8 lambda random
+# using lambda expressions, write a function List<Integer> getRandomSubset(List<Integer> list) that returns a
+# random subset of arbitrary size. All subsets (including the empty set) should be equally likely
+"""
+Random random = new Random();
+Predicate<Object> flipCoin = o -> {
+    return random.nextBoolean();
+}
+
+List<Integer> getRandomSubset(List<Integer> list) {
+    List<Integer> subset = list.stream().filter(flipCoin).
+        collect(Collectors.toList());
+    return subset;
+}
+"""
