@@ -85,3 +85,17 @@ treemap gives you sorted order
 hashmap gives you random order
 """
 
+# 13.6 object reflection
+# explain what object reflection is in java and why it is useful
+"""
+Object reflection provides a way to get reflective information about java classes and objects and perform operations like
+    get info about methods and fields present inside the class at runtime
+    create new instances of a class
+    getting and setting object fields directly by getting field reference regardless of what the access modifier is
+
+why use this?
+    it can help you observe or manipulate the runtime behavior of applications
+    helps when debugging and testing programs by giving you direct access to methods, constructors, and fields
+    you can call methods by name without knowing the method in advance (ex. you let the user create the method name)
+"""
+
