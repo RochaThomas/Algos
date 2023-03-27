@@ -46,3 +46,28 @@ finalize
     this method can be overridden if someone wishes to define custom behavior for garbage collection
 """
 
+# 13.4 generics vs templates
+# Explain the difference between templates in c++ and generics in java
+"""
+java generics are used because of type erasure
+meaning it eliminates parameterized types when source code is translated to the JVM byte code
+doesn't really change anything is just makes it a bit prettier
+syntactic sugar
+
+c++ templates are glorified macro set, with the complier creating a new copy of the template code for each type
+MyClass<Bar> where the type here is bar will not share static variables with MyClass<Foo> where the type is Foo
+but two instances of MyClass<Foo> will share static variables
+
+in java static variables are shared across the class regardless of the different type parameters
+
+some other differences
+    c++ uses primatives like int while java uses Integer
+    in java you can restrict the template's type parameters
+    in c++ the type parameter can be instantiated but you can't do this in java
+    in java, the type parameter cannot be used for static methods because the types maybe different between instances of the class
+        c++ does have this problem because two different type parameters use two different static methods
+    in java all instances of a template class are of the same type regardless of the type parameters and the type parameters are
+        erased at runtime
+    in c++ instances with different type parameters are different types
+"""
+
