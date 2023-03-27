@@ -15,3 +15,12 @@ This demonstrate inheritance because a subclass calls its parent's constructor. 
 subclasses or by its parent's other subclasses
 """
 
+# 13.2 return from finally
+# in java does the finally block get executed if we insert a return statement inside the try block of a try-catch-finally?
+"""
+yes
+the finally block gets executed when the try block exits regardless of return, continue, break, etc
+the finally block only doesn't execute if the virtual machine exits before the finally block begins executing
+or if the thread that is running the try catch block gets killed
+"""
+
