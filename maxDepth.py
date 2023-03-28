@@ -10,7 +10,6 @@ class TreeNode:
 class Solution:
     def maxDepth(self, root):
         if not root: return 0
-        if not root.right and not root.left: return 1
         def helper(node, currDepth):
             if not node:
                 return currDepth
