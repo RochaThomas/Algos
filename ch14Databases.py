@@ -27,3 +27,10 @@ LEFT JOIN
 ON ReqCounts.BuildingID = Buildings.BuildingID
 """
 
+# 14.3 close all requests
+# building #11 is undergoing major renovation. implement a query to close all requests from apartments in this bulding
+"""
+UPDATE Requests
+SET Status = 'Closed'
+WHERE AptID in (SELECT AptID FROM Apartments WHERE Building = 11)
+"""
