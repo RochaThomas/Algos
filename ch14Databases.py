@@ -73,3 +73,19 @@ pros
 """
 see solution book page 445
 """
+
+# 14.7 design grade database
+# design a simple database for students grades
+# write a sql query to return a list of the honor roll students (top 10%) sorted by gpa
+"""
+3 objects
+students, courses, and coure entrollment
+student
+    id and name
+courses
+    name and id
+course enrollemnt
+    student id and course id and course grade
+
+see solution pg 446 for query
+"""
