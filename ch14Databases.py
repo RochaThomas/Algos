@@ -16,5 +16,14 @@ ON Tenants.TenantID = C.TenantID
 # 14.2 open requests
 # write a sql query to get a list of all buildings and the number of open requests (requests in which status equals open)
 """
-
+SELECT BuildName, ISNULL(Count, 0) as 'Count'
+FROM Buildings
+LEFT JOIN
+    (SELECT Apartments.BuildingID, count(*) as 'Count'
+    FROM Requests INNER JOIN Apartments
+    ON Requests.AptID = Apartments.AptID
+    WHERE Requests.Status = 'Open'
+    GROUP BY Apartments.BuildingID) ReqCounts
+ON ReqCounts.BuildingID = Buildings.BuildingID
 """
+
