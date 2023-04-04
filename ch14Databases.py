@@ -34,3 +34,19 @@ UPDATE Requests
 SET Status = 'Closed'
 WHERE AptID in (SELECT AptID FROM Apartments WHERE Building = 11)
 """
+
+# 14.4 joins
+# what are the different types of joins? please explain how they differ and why certain types are better in certain situations
+"""
+Joins combine two tables that have at least 1 matching field
+Inner joins only show the records that have a matching field in both tables
+Outer joins show all the records of the inner joins plus those that have no matching records
+    there are 3 subtypes
+        left outer join aka left join
+            contains all the records from the left tables and shows NULL where there are no matching records
+        right outer join aka right join
+            contains all the records from the right tables and shows NULL where there are no matching records
+        full outer join
+            basically the combination of left and right joins, shows all the records and where there is no matching
+            in the left or right it shows NULL
+"""
