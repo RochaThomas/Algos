@@ -68,3 +68,8 @@ pros
     queries to retrieve have simpler code
 """
 
+# 14.6 entity relationship diagram
+# draw an erd for a database with companies, people, and professionals (people who work for companies)
+"""
+see solution book page 445
+"""
