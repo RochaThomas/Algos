@@ -50,3 +50,21 @@ Outer joins show all the records of the inner joins plus those that have no matc
             basically the combination of left and right joins, shows all the records and where there is no matching
             in the left or right it shows NULL
 """
+
+# 14.5 denormalization
+# what is denormalization? explain the pros and cons
+"""
+denormalization is a way to optimize databases by adding redundant data
+normalized data makes separate tables to decrease redundant data
+
+cons
+    updates and inserts are more expensive
+    update and insert code is not as neet
+    because of repetiton, data may be inconsistent
+    redundancy means you need more storage
+
+pros
+    retrieving data is faster because there are fewer joins
+    queries to retrieve have simpler code
+"""
+
