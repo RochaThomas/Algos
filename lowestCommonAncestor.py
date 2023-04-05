@@ -10,7 +10,14 @@ class TreeNode:
 
 class Solution:
     def lowestCommonAncestor(self, root, p, q):
-        pass
+        curr = root
+        while curr:
+            if p.val > curr.val and q.val > curr.val:
+                curr = curr.right
+            elif p.val < curr.val and q.val < curr.val:
+                curr = curr.left
+            else:
+                return curr
         
 
     print(lowestCommonAncestor(root = [6,2,8,0,4,7,9,None,None,3,5], p = 2, q = 8))
