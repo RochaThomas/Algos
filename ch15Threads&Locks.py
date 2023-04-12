@@ -13,3 +13,9 @@ A thread exists within a process and shares process resources. Multiple threads 
 space. Each thread has its own stack and registers but still can share memory through the process heap
 Modifying a process resource from one thread makes the change visible to sibling threads
 """
+
+# 15.2 context switch
+# how would you measure the time spent in a context switch
+"""
+
+"""
