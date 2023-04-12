@@ -50,5 +50,6 @@ one way to prevent deadlocks is to declare what locks a process will require upf
 deadlocks happen when there is a cycle
 again this solution is going over my head
 get a better understanding of threads and locks and revisit these questions
+solution pg 452
 """
 
