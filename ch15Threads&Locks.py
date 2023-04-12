@@ -38,3 +38,12 @@ philosopher could not hold a larger numbered stick unless having the lower first
 solution is a little unclear without a visualization
 """
 
+# 15.4 deadlock-free class
+# design a class which provides a lock only if there are no possible deadlocks
+"""
+one way to prevent deadlocks is to declare what locks a process will require upfront
+deadlocks happen when there is a cycle
+again this solution is going over my head
+get a better understanding of threads and locks and revisit these questions
+"""
+
