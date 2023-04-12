@@ -78,3 +78,13 @@ A and B can be executed at the same time on differnt threads because B is not sy
 lock B as long as B does not have the sync designation
 """
 
+# 15.7 fizzbuzz
+# print numbers 1 to n. When the number is divisible by 3 print Fizz, when divisible by 5 print Buzz, and when divisible by both
+# print FizzBuzz. Implement a multithreaded version of FizzBuzz with 4 threads.
+# One thread checks for divisibility of 3 and prints Fizz
+# Another thread checks for divisibility of 5 and prints Buzz.
+# Another thread checks for divisibility of 3 and 5 and prints FizzBuzz.
+# The last thread prints the numbers
+"""
+solution pg 458
+"""
