@@ -53,3 +53,16 @@ get a better understanding of threads and locks and revisit these questions
 solution pg 452
 """
 
+# 15.5 call in order
+# suppose we have the following code:
+# public class Foo {
+#   public Foo() {}
+#   public void first() {}
+#   public void second() {}
+#   public void third() {}
+# }
+# The same instance of Foo will be passed to three different threads. ThreadA will call first, ThreadB will call second,
+# ThreadC will call third. Design a mechanism to ensure that first is called before second and second before third
+"""
+solution page 456
+"""
