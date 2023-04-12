@@ -22,3 +22,19 @@ Record the timestamps of the last and first instruction of the processes being s
 explanation goes over my head
 watch a video and research more to understand
 """
+
+# 15.3 dining philosophers
+# A bunch of philosophers are sitting around a circular table with 1 chopstick between them. All need 2 chopsticks to eat
+# and they always pick up left then right. Using threads and locks, implement a simulation of the dining philosophers problem that 
+# prevents deadlocks
+"""
+one solution is to put down the left chopstick if there is no right chopstick to pick up
+however, if the philosophers are all perfectly synchronize then all philosophers pick up left then all drop left over and over again
+
+the better solution is to label the chopsticks with numbers and instruct the philosophers to pick up the lower number stick
+meaning that they always pick up left then right except for the last philosopher who will do the reverse. This means the
+philosopher could not hold a larger numbered stick unless having the lower first
+
+solution is a little unclear without a visualization
+"""
+
