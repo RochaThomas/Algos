@@ -2,6 +2,11 @@
 # chapter 15 threads and locks
 
 # interview questions
+"""
+MY UNDERSTANDING OF THREADS AND LOCKS IS NOT GOOD ENOUGH YET
+MANY OF THESE SOLUTIONS JUST REFERENCE THE BOOKS SOLUTION PAGE
+FIRST STUDY THIS TOPIC THEN REVISIT THESE QUESTIONS
+"""
 
 # 15.1 threads vs process
 # whats the difference between a thread and a process
