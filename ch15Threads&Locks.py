@@ -87,4 +87,5 @@ lock B as long as B does not have the sync designation
 # The last thread prints the numbers
 """
 solution pg 458
+
 """
