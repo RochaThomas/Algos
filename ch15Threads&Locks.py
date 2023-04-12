@@ -17,5 +17,8 @@ Modifying a process resource from one thread makes the change visible to sibling
 # 15.2 context switch
 # how would you measure the time spent in a context switch
 """
-
+A context switch is the time spent switching between two processes
+Record the timestamps of the last and first instruction of the processes being swapped
+explanation goes over my head
+watch a video and research more to understand
 """
