@@ -66,3 +66,15 @@ solution pg 452
 """
 solution page 456
 """
+
+# 15.6 synchronized methods
+# you are given a class with synchronized method A and a normal method B. If you have two threads in once instance of a program
+# can they both execute A at the same time? Can they execute A and B at the same time?
+"""
+A synchronized method cannot be executed by two threads of the same instance at the same time.
+If the two threads have the same instance of the object then they cannot both execute A at the same time
+if they have different instances then they can be executed at the same time
+A and B can be executed at the same time on differnt threads because B is not synchronized so the synchronized A method will not
+lock B as long as B does not have the sync designation
+"""
+
