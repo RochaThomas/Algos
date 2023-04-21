@@ -1,23 +1,13 @@
 # morning algos
 # neetcode kth largest element in a stream
 
-import heapq
-
 class KthLargest:
 
     def __init__(self, k: int, nums: List[int]):
-        # minheap with k largest elements
-        self.minHeap, self.k = nums, k
-        heapq.heapify(self.minHeap)
-        while len(self.minHeap) > k:
-            heapq.heappop(self.minHeap)
+        pass
 
     def add(self, val: int) -> int:
-        heapq.heappush(self.minHeap, val)
-        if len(self.minHeap) > self.k:
-            heapq.heappop(self.minHeap)
-        return self.minHeap[0]
-        
+        pass
 
 
 # Your KthLargest object will be instantiated and called as such:
