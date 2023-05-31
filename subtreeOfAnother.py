@@ -11,17 +11,14 @@ class Solution:
     def isSubtree(self, root, subRoot):
         if not subRoot: return True
         if not root: return False
-        
-        if self.checkTree(root, subRoot):
-            return True
+
+        if self.isSameTree(root, subRoot): return True
         return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
-
-    def checkTree (self, node, subRoot):
-        if not node and not subRoot: return True
-        if node and subRoot and node.val == subRoot.val:
-            return self.checkTree(node.left, subRoot.left) and self.checkTree(node.right, subRoot.right)
-        return False
-
+    def isSameTree(self, p, q):
+        if not p and not q: return True
+        if not p or not q or p.val != q.val: return False
+        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        
 
     print(isSubtree([3,4,5,1,2], [4,1,2]))
