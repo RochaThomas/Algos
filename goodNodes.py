@@ -12,13 +12,11 @@ class Solution:
         
         def dfs(node, pMax):
             if not node: return 0
-            res = 0
-            if node.val >= pMax:
-                res += 1
+            res = 1 if node.val >= pMax else 0
             pMax = max(node.val, pMax)
             res += dfs(node.left, pMax)
             res += dfs(node.right, pMax)
             return res
-        return dfs
+        return dfs(root, root.val)
 
     print(goodNodes([3,1,4,3,None,1,5]))
