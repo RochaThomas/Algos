@@ -9,7 +9,12 @@ class TreeNode:
         self.right = right
 class Solution:
     def isValidBST(self, root):
-        pass
+        
+        def dfs(node, low, high):
+            if not node: return True
+            if node.val >= high or node.val <= low: return False
+            return dfs(node.left, low, node.val) and dfs(node.right, node.val, high)
+        return dfs(root, -float('inf'), float('inf'))
         
 
     print(isValidBST([2,1,3]))
