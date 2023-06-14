@@ -9,7 +9,14 @@ class TreeNode:
         self.right = right
 class Solution:
     def goodNodes(self, root):
-        pass
+        
+        def dfs(node, pMax):
+            if not node: return 0
+            if node.val < pMax:
+                return dfs(node.left, pMax) + dfs(node.right, pMax)
+            pMax = max(node.val, pMax)
+            return 1 + dfs(node.left, pMax) + dfs(node.right, pMax)
+        return dfs(root, root.val)
         
 
     print(goodNodes([3,1,4,3,None,1,5]))
