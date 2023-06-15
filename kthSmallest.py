@@ -9,7 +9,19 @@ class TreeNode:
         self.right = right
 class Solution:
     def kthSmallest(self, root, k):
-        pass
+        n = 0
+        stack = []
+        curr = root
+
+        while stack or curr:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+            curr = stack.pop()
+            n += 1
+            if n == k:
+                return curr.val
+            curr = curr.right
         
 
     print(kthSmallest([3,1,4,None,2], 1))
