@@ -5,6 +5,7 @@ class Solution:
     def subsetsWithDup(self, nums):
         res = []
         curr = []
+        nums.sort()
 
         def backtrack(i):
             if i >= len(nums):
