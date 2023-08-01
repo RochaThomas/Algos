@@ -10,6 +10,28 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node):
-        pass
+        nodeMap = {}
+
+        def helper(node):
+            if node:
+                if node.val in nodeMap:
+                    return
+                nodeMap[node.val] = [neighbor.val for neighbor in node.neighbors]
+                for neighbor in node.neighbors:
+                    helper(neighbor)
+
+        helper(node)
+        
+        newNodes = {}
+        for key in nodeMap.keys():
+            newNodes[key] = Node(key)
+        for key in newNodes.keys():
+            for neighborIndex in nodeMap[key]:
+                newNodes[key].neighbors.append(newNodes[neighborIndex])
+            # print(key, ', ', [neigh.val for neigh in newNodes[key].neighbors])
+        return newNodes.get(1)
+
+        
+
 
     print(cloneGraph([[2,4],[1,3],[2,4],[1,3]]))
