@@ -10,19 +10,6 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node):
-        nodeMap = {}
-
-        def dfs(node):
-            if node in nodeMap:
-                return nodeMap[node]
-            copy = Node(node.val)
-            nodeMap[node] = copy
-            for nei in node.neighbors:
-                copy.neighbors.append(dfs(nei))
-            return copy
-
-        return dfs(node) if node else None
-
-
+        pass
 
     print(cloneGraph([[2,4],[1,3],[2,4],[1,3]]))
