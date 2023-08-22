@@ -1,6 +1,8 @@
 # morning algos
 # neetcode Clone Graph
 
+
+# Definition for a Node.
 class Node:
     def __init__(self, val = 0, neighbors = None):
         self.val = val
@@ -8,19 +10,6 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node):
-        nodeMap = {}
-        
-        def cloneNode(node):
-            if node in nodeMap:
-                return nodeMap[node]
-            copy = Node(node.val)
-            nodeMap[node] = copy
-            for nei in node.neighbors:
-                copy.neighbors.append(cloneNode(nei))
-            return copy
-        
-        return cloneNode(node) if node else None
-
-
+        pass
 
     print(cloneGraph([[2,4],[1,3],[2,4],[1,3]]))
