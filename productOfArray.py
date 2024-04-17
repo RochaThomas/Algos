@@ -4,4 +4,15 @@
 
 class Solution:
     def productExceptSelf(self, nums):
-        pass
+        output = [1] * len(nums)
+        x = 1
+
+        for i in range(len(nums)):
+            output[i] = x
+            x *= nums[i]
+        x = 1
+        for i in range(len(nums) - 1, -1, -1):
+            output[i] *= x
+            x *= nums[i]
+
+        return output
