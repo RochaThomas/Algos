@@ -3,7 +3,9 @@
 
 class Solution:
     def singleNumber(self, nums):
-        # bit manipulation
-        pass
+        res = 0
+        for n in nums:
+            res = n ^ res
+        return res
 
     print(singleNumber([2,2,1]))
