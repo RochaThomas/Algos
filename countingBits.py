@@ -3,7 +3,7 @@
 
 class Solution:
     def countBits(self, n):
+        # bit manipulation
         pass
-
 
     print(countBits(2))
