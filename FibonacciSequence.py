@@ -10,5 +10,8 @@ class Solution:
             prev = curr
             curr = temp
         return res
+    
+    def reqFibSeq(n):
+        pass
 
     print(fibSeq(10))
